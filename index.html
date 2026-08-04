@@ -1,93 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
- <link rel="stylesheet" href="style.css">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bellumi's Diary | Building Freedom From Scratch</title><
-link rel="stylesheet" href="style.css"> 
+<title>Bellumi's Diary</title>
 
 <style>
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background: #FAF8F5;
     color: #2E2E2E;
-}<nav>
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
 
-<a href="index.html">Home</a>
 
-<a href="story.html">My Story</a>
-
-<a href="portugal.html">Portugal</a>
-
-<a href="music.html">Music</a>
-
-<a href="photography.html">Photography</a>
-
-<a href="freedom.html">Freedom</a>
-
-<a href="safe-space.html">Safe Space</a>
-
-</nav>
-header {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+nav {
+    padding: 25px;
     text-align: center;
-    padding: 40px;
-    background: linear-gradient(
-        rgba(250,248,245,0.85),
-        rgba(250,248,245,0.95)
-    );
+    background: #FAF8F5;
 }
 
-h1 {
-    font-size: 70px;
-    font-family: Georgia, serif;
-    margin-bottom: 10px;
+
+nav a {
+    color: #2E2E2E;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 16px;
 }
 
-h2 {
-    font-family: Georgia, serif;
+
+nav a:hover {
     color: #CAB8FF;
 }
 
-p {
-    font-size: 20px;
-    line-height: 1.7;
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
 }
+
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+
+h2 {
+    font-family: Georgia, serif;
+    color: #9D82E8;
+    font-size: 38px;
+}
+
+
+.hero p {
+    font-size: 22px;
+    max-width: 700px;
+}
+
 
 button {
     background: #CAB8FF;
     border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
+    padding: 16px 35px;
+    border-radius: 50px;
     font-size: 18px;
     margin-top: 25px;
-    cursor: pointer;
 }
+
 
 section {
-    padding: 80px 10%;
+    padding: 60px 10%;
 }
 
+
 .card {
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    margin-bottom:40px;
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    margin-bottom: 40px;
 }
 
 
 footer {
-    text-align:center;
-    padding:40px;
-    background:#A8B89F;
+    background: #A8B89F;
+    padding: 40px;
+    text-align: center;
 }
+
+
+.flower {
+    font-size: 40px;
+}
+
 
 </style>
 
@@ -97,18 +115,32 @@ footer {
 <body>
 
 
-<header>
+<nav>
+
+<a href="#">Home</a>
+<a href="#">My Story</a>
+<a href="#">Portugal</a>
+<a href="#">Music</a>
+<a href="#">Photography</a>
+<a href="#">Freedom</a>
+<a href="#">Safe Space</a>
+
+</nav>
+
+
+
+<div class="hero">
 
 <div>
 
-<h1>Bellumi's Diary 🌸</h1>
+<div class="flower">🌸</div>
+
+<h1>Bellumi's Diary</h1>
+
+<h2>Building freedom from scratch</h2>
 
 <p>
-Building freedom from scratch.
-</p>
-
-<p>
-A journey back to my roots, my creativity and the life I truly want to build.
+A journey back to my roots, my creativity and the life my soul has been asking for.
 </p>
 
 <button>
@@ -117,19 +149,20 @@ Read my story
 
 </div>
 
-</header>
+</div>
 
 
 
 <section>
+
 
 <div class="card">
 
 <h2>A Letter For You</h2>
 
 <p>
-True freedom isn't expensive.
-It’s an inside job.
+True freedom isn't expensive. 
+It's an inside job.
 </p>
 
 <p>
@@ -148,23 +181,25 @@ From surviving to creating.
 <h2>My Journey 🌿</h2>
 
 <p>
-🇵🇹 Childhood in Portugal
-<br>
-↓
-<br>
-🇩🇪 Life in Germany
-<br>
-↓
-<br>
+
+🇵🇹 My roots in Portugal
+
+<br><br>
+
+🇩🇪 Starting again in Germany
+
+<br><br>
+
 ✨ Finding my own path
-<br>
-↓
-<br>
+
+<br><br>
+
 🚐 Building freedom from scratch
-<br>
-↓
-<br>
-🌸 Creating a future Safe Space for women in Portugal
+
+<br><br>
+
+🌸 Creating a future safe space for women
+
 </p>
 
 </div>
@@ -173,16 +208,34 @@ From surviving to creating.
 
 <div class="card">
 
-<h2>My Passions</h2>
+<h2>What I Create</h2>
 
 <p>
-🎸 Music & Street Performance
-<br><br>
-📷 Photography
-<br><br>
-🌿 Nature & Slow Living
-<br><br>
+🎸 Music & street performances
+</p>
+
+<p>
+📷 Photography & storytelling
+</p>
+
+<p>
+🌿 Nature & slow living
+</p>
+
+<p>
 💻 Building a remote life
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>The Dream 🌺</h2>
+
+<p>
+One day I want to create a peaceful place in Portugal where women can reconnect with themselves, nature and creativity.
 </p>
 
 </div>
@@ -196,12 +249,11 @@ From surviving to creating.
 
 <p>
 With love, Bella 🤍
-<br>
+<br><br>
 Bellumi's Diary
 </p>
 
 </footer>
-
 
 
 </body>
