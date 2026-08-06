@@ -1,0 +1,6 @@
+const stops = [
+  ["01", "Das Meer", "Salz auf der Haut, Wind in den Haaren und kein Plan außer dem Horizont."],
+  ["02", "Zwischen den Zeilen", "Gedanken, die beim Gehen kommen und später zu kleinen Geschichten werden."],
+  ["03", "Nach Hause", "Der schönste Weg ist manchmal der, auf dem man sich selbst wiederfindet."]
+];
+export function Journey() { return <section id="journey" className="bg-ink px-5 py-24 text-mist sm:px-10 lg:px-16 lg:py-36"><div className="mx-auto max-w-7xl"><p className="section-kicker text-[#d8c9e0]">02 — Unterwegs</p><div className="mt-9 grid gap-12 lg:grid-cols-2"><h2 className="font-[family-name:var(--font-display)] text-5xl leading-[.95] sm:text-7xl">Wohin das Herz<br /><em className="font-normal text-[#d8c9e0]">gerade will.</em></h2><p className="max-w-md self-end text-base leading-8 text-mist/70">Keine Bucket List. Eher eine Landkarte aus Gefühlen, Fundstücken und Wegen, die sich richtig anfühlen.</p></div><div className="mt-16 grid gap-px bg-mist/15 md:grid-cols-3">{stops.map(([no,title,text]) => <article key={no} className="bg-ink p-7 sm:p-9"><span className="text-xs font-bold tracking-widest text-[#d8c9e0]">{no}</span><h3 className="mt-12 font-[family-name:var(--font-display)] text-3xl">{title}</h3><p className="mt-4 text-sm leading-7 text-mist/65">{text}</p></article>)}</div></div></section>; }
