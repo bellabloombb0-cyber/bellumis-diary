@@ -1,0 +1,2 @@
+import { PassifloraLogo } from "./PassifloraLogo";
+export function Footer() { return <footer className="border-t border-ink/10 px-5 py-8 sm:px-10 lg:px-16"><div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5"><a href="#top" className="flex items-center gap-2"><PassifloraLogo className="h-7 w-7" /><span className="font-[family-name:var(--font-display)] text-xl">Bellumi’s Diary</span></a><p className="text-xs text-ink/55">© {new Date().getFullYear()} Bellumi’s Diary. Mit Liebe gesammelt.</p></div></footer>; }
