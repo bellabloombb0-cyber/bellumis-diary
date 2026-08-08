@@ -4,7 +4,7 @@ export function Contact() {
       <div className="relative mx-auto w-full max-w-md lg:order-2">
         <div className="absolute -inset-4 -z-10 rotate-3 rounded-[2rem] bg-[#edc1d7]" />
         <div className="overflow-hidden rounded-[1.7rem] border-8 border-white bg-[#f58cc2] shadow-2xl shadow-lilac/25">
-          <img src="/images/bellumi-note.jpeg" alt="Bellumi surrounded by little moments from her diary" className="aspect-[3/4] w-full object-contain object-top" />
+          <img src="/images/bellumi-note.jpeg" alt="Bellumi surrounded by little moments from her diary" className="aspect-[3/4] w-full object-cover object-top" />
         </div>
         <p className="mt-4 text-center font-[family-name:var(--font-display)] text-xl italic text-ink/65">A few of my favourite little things.</p>
       </div>
