@@ -2,7 +2,25 @@
 @theme { --font-display: var(--font-display); --font-sans: var(--font-sans); --color-ink: #352d42; --color-mist: #fbf8ff; --color-lilac: #ae96c4; --color-lilac-deep: #70517f; --color-clay: #a775a7; --color-moss: #7d8b70; --color-sand: #e9def1; }
 :root { --paper: #fbf8ff; --ink: #352d42; }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body { background: var(--paper); color: var(--ink); font-family: var(--font-sans), sans-serif; }
 ::selection { background: #d9cbe0; color: #353038; }
 .flower-line { stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .section-kicker { letter-spacing: .18em; text-transform: uppercase; font-size: .69rem; font-weight: 700; }
+.scroll-reveal { opacity: 0; transform: translateY(1.75rem) scale(.985); transition: opacity 800ms ease, transform 900ms cubic-bezier(.22, 1, .36, 1); }
+.scroll-reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.hero-copy { animation: hero-arrive 900ms cubic-bezier(.22, 1, .36, 1) both; }
+.hero-glow { animation: glow-drift 12s ease-in-out infinite alternate; }
+.float-flower { animation: flower-float 5s ease-in-out infinite; transform-origin: center; }
+.letter-open { animation: letter-open 500ms cubic-bezier(.22, 1, .36, 1) both; }
+
+@keyframes hero-arrive { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: translateY(0); } }
+@keyframes glow-drift { from { transform: translate3d(-2%, -1%, 0) scale(1); opacity: .55; } to { transform: translate3d(3%, 2%, 0) scale(1.08); opacity: .9; } }
+@keyframes flower-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-.45rem) rotate(3deg); } }
+@keyframes letter-open { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .scroll-reveal { opacity: 1; transform: none; }
+}
