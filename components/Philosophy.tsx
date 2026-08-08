@@ -21,7 +21,7 @@ export function Philosophy() {
         <p>Who taught me what makes a person valuable?<br />Where did these beliefs come from?<br /><strong>Are they actually true — and are they even mine?</strong></p>
         <p>I realized that if I wanted to change my life, I had to go back to the roots — face my shadows, question old patterns, and find out who I am underneath everything I was taught to be. Today, I&apos;m learning to value what I once made small.</p>
         <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep"><strong>You are allowed to do what you love — and build something from it.</strong></p>
-        <p>Right now, I&apos;m in Germany, trying different ways to earn money remotely and documenting the journey from scratch — clumsy, chaotic, but with all my heart. I&apos;m slowly finding my way back to Portugal, where I grew up and where my soul comes alive — with a home on wheels and street music along the way.</p>
+        <p>Right now, I&apos;m in Germany, trying different ways to earn money remotely and documenting the journey from scratch — clumsy, chaotic, but with all my heart. I&apos;m slowly finding my way back to Portugal, where I grew up and where my soul comes alive — with a home on wheels and street music along the way. One day, I would also love to create a safe space for women there.</p>
         <p>You don&apos;t need to become somebody else.</p>
         <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep"><strong>Maybe you just need to come back to who you already are.</strong></p>
         <p className="pt-3 font-[family-name:var(--font-display)] text-2xl italic text-ink">With love,<br />Bella 💜</p>
