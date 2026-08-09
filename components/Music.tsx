@@ -2,6 +2,14 @@ import { ScrollReveal } from "./ScrollReveal";
 
 const paypalMeBaseUrl = "https://paypal.me/Bellahealth";
 
+// TODO: Replace each placeholder file with Bella's own 20–30 second MP3 preview.
+// Keep full songs out of /public and only serve them later from a payment-protected flow.
+const musicPreviews = [
+  { title: "Song 01", source: "/audio/music-preview-01-placeholder.mp3" },
+  { title: "Song 02", source: "/audio/music-preview-02-placeholder.mp3" },
+  { title: "Song 03", source: "/audio/music-preview-03-placeholder.mp3" },
+];
+
 export function Music() {
   return <section id="music" className="bg-[#e9dff2] px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
     <div className="mx-auto max-w-7xl">
@@ -21,14 +29,21 @@ export function Music() {
           <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-ink">My digital street music hat</p>
           <p className="mt-5 max-w-xl text-base leading-8 text-ink/70">Music is my portable home. You&apos;re always welcome to simply listen.</p>
 
-          <div className="mt-8 rounded-2xl border border-lilac/30 bg-[#f7f1fb] p-5">
-            <p className="text-xs font-bold uppercase tracking-[.16em] text-lilac-deep">20–30 second preview</p>
-            {/* TODO: Add only Bella's 20–30 second MP3 teaser at /public/audio/song-teaser-placeholder.mp3. */}
-            <audio className="mt-4 w-full" controls preload="metadata" aria-label="20 to 30 second music preview">
-              <source src="/audio/song-teaser-placeholder.mp3" type="audio/mpeg" />
-              Your browser does not support audio playback.
-            </audio>
-            <p className="mt-3 text-xs leading-5 text-ink/55">Temporary audio file: <code>/audio/song-teaser-placeholder.mp3</code></p>
+          <div className="mt-8 space-y-4">
+            <p className="text-xs font-bold uppercase tracking-[.16em] text-lilac-deep">Three little previews</p>
+            {musicPreviews.map((preview) => (
+              <div key={preview.source} className="rounded-2xl border border-lilac/30 bg-[#f7f1fb] p-5">
+                <div className="flex items-baseline justify-between gap-4">
+                  <p className="font-[family-name:var(--font-display)] text-2xl text-ink">{preview.title}</p>
+                  <span className="text-xs font-bold uppercase tracking-[.12em] text-lilac-deep">20–30 sec</span>
+                </div>
+                <audio className="mt-4 w-full" controls preload="metadata" aria-label={`${preview.title} music preview`}>
+                  <source src={preview.source} type="audio/mpeg" />
+                  Your browser does not support audio playback.
+                </audio>
+                <p className="mt-3 text-xs leading-5 text-ink/55">Replace later: <code>{preview.source}</code></p>
+              </div>
+            ))}
           </div>
 
           <div className="mt-8">
