@@ -1,7 +1,6 @@
 import { ScrollReveal } from "./ScrollReveal";
 
-// TODO: Bellas echten PayPal.me-Link einsetzen.
-const paypalMeBaseUrl = "https://www.paypal.com/paypalme/REPLACE_WITH_BELLAS_LINK";
+const paypalMeBaseUrl = "https://paypal.me/Bellahealth";
 
 export function Music() {
   return <section id="music" className="bg-[#e9dff2] px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
@@ -34,13 +33,12 @@ export function Music() {
 
           <div className="mt-8">
             <p className="text-sm leading-6 text-ink/65">If you&apos;d like to leave a coin in my digital hat, thank you. Every contribution supports this journey.</p>
-            {/* TODO: Bellas echten PayPal.me-Link einsetzen. */}
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <a className="rounded-full bg-lilac-deep px-4 py-3 text-center text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink" href={`${paypalMeBaseUrl}/1EUR`} target="_blank" rel="noreferrer">Leave €1</a>
               <a className="rounded-full border border-lilac-deep bg-mist px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={`${paypalMeBaseUrl}/5EUR`} target="_blank" rel="noreferrer">Leave €5</a>
               <a className="rounded-full border border-lilac-deep bg-[#f0e6f6] px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={paypalMeBaseUrl} target="_blank" rel="noreferrer">Choose an amount (from €1)</a>
             </div>
-            <p className="mt-4 text-xs leading-5 text-ink/50">PayPal.Me placeholder active — replace the link before sharing this page.</p>
+            <p className="mt-4 text-xs leading-5 text-ink/50">Payments are handled securely by PayPal.</p>
           </div>
         </ScrollReveal>
       </div>
