@@ -18,37 +18,36 @@ export function Music() {
         <h2 className="mt-9 font-[family-name:var(--font-display)] text-5xl leading-[.95] sm:text-7xl">The thing<br /><em className="font-normal text-lilac-deep">I love.</em></h2>
       </ScrollReveal>
 
-      <div className="mt-14 grid items-center gap-10 lg:grid-cols-[.82fr_1.18fr] lg:gap-20">
+      <div className="mt-14 grid items-start gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-16">
         <ScrollReveal className="relative overflow-hidden rounded-[2rem] border-8 border-mist bg-lilac/20 shadow-xl shadow-lilac/20">
-          <img src="/images/music/bella-with-guitar.png" alt="Bella playing her hand-painted sunflower guitar outdoors" className="aspect-[4/5] w-full object-cover" />
+          <img src="/images/music/bella-with-guitar.png" alt="Bella playing her hand-painted sunflower guitar outdoors" className="aspect-[4/5] w-full object-cover lg:aspect-[3/4]" />
           <p className="border-t border-lilac/15 bg-mist px-5 py-4 text-xs leading-5 text-ink/65">
             Photo &amp; hand-painted guitar artwork by {" "}
             <a className="font-bold text-lilac-deep underline-offset-4 transition hover:underline" href="https://jcollins662.wixsite.com/jcphotography/30-days-diary?lightbox=dataItem-io1y9a60" target="_blank" rel="noreferrer">JC Photography</a>
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className="rounded-[2rem] bg-mist p-7 shadow-sm sm:p-10">
+        <ScrollReveal className="rounded-[2rem] bg-mist p-6 shadow-sm sm:p-8">
           <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-ink">My digital street music hat</p>
           <p className="mt-5 max-w-xl text-base leading-8 text-ink/70">Music is my portable home. You&apos;re always welcome to simply listen.</p>
 
-          <div className="mt-8 space-y-4">
+          <div className="mt-7 space-y-3">
             <p className="text-xs font-bold uppercase tracking-[.16em] text-lilac-deep">Three little previews</p>
             {musicPreviews.map((preview) => (
-              <div key={preview.source} className="rounded-2xl border border-lilac/30 bg-[#f7f1fb] p-5">
+              <div key={preview.source} className="rounded-2xl border border-lilac/30 bg-[#f7f1fb] px-4 py-3.5">
                 <div className="flex items-baseline justify-between gap-4">
-                  <p className="font-[family-name:var(--font-display)] text-2xl text-ink">{preview.title}</p>
+                  <p className="font-[family-name:var(--font-display)] text-xl text-ink">{preview.title}</p>
                   <span className="text-xs font-bold uppercase tracking-[.12em] text-lilac-deep">20–30 sec</span>
                 </div>
-                <audio className="mt-4 w-full" controls preload="metadata" aria-label={`${preview.title} music preview`}>
+                <audio className="mt-3 w-full" controls preload="metadata" aria-label={`${preview.title} music preview`}>
                   <source src={preview.source} type="audio/mpeg" />
                   Your browser does not support audio playback.
                 </audio>
-                <p className="mt-3 text-xs leading-5 text-ink/55">Replace later: <code>{preview.source}</code></p>
               </div>
             ))}
           </div>
 
-          <div className="mt-8">
+          <div className="mt-7">
             <p className="text-sm leading-6 text-ink/65">If you&apos;d like to leave a coin in my digital hat, thank you. Every contribution supports this journey.</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               <a className="rounded-full bg-lilac-deep px-4 py-3 text-center text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink" href={`${paypalMeBaseUrl}/1EUR`} target="_blank" rel="noreferrer">Leave €1</a>
