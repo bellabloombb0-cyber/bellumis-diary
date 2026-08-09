@@ -20,9 +20,7 @@ export function Music() {
 
       <div className="mt-14 grid items-center gap-10 lg:grid-cols-[.82fr_1.18fr] lg:gap-20">
         <ScrollReveal className="relative overflow-hidden rounded-[2rem] border-8 border-mist bg-lilac/20 shadow-xl shadow-lilac/20">
-          {/* TODO: Replace /images/music/bella-with-guitar-placeholder.jpg with Bella's music photo. */}
-          <img src="/images/music/bella-with-guitar-placeholder.jpg" alt="Placeholder for Bella with her guitar" className="aspect-[4/5] w-full object-cover" />
-          <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-mist/90 px-4 py-3 text-center text-xs font-bold text-ink/70 backdrop-blur-sm">Photo placeholder — replace with Bella&apos;s music photo</div>
+          <img src="/images/music/bella-with-guitar.png" alt="Bella playing her hand-painted sunflower guitar outdoors" className="aspect-[4/5] w-full object-cover" />
         </ScrollReveal>
 
         <ScrollReveal className="rounded-[2rem] bg-mist p-7 shadow-sm sm:p-10">
