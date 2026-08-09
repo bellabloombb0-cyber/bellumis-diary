@@ -19,8 +19,8 @@ export function Music() {
         </ScrollReveal>
 
         <ScrollReveal className="rounded-[2rem] bg-mist p-7 shadow-sm sm:p-10">
-          <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-ink">Mein digitaler Straßenmusik-Hut 🎸🪙</p>
-          <p className="mt-5 max-w-xl text-base leading-8 text-ink/70">Musik ist mein tragbares Zuhause. Und du darfst einfach lauschen.</p>
+          <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-ink">My digital street music hat</p>
+          <p className="mt-5 max-w-xl text-base leading-8 text-ink/70">Music is my portable home. You&apos;re always welcome to simply listen.</p>
 
           <div className="mt-8 rounded-2xl border border-lilac/30 bg-[#f7f1fb] p-5">
             <p className="text-xs font-bold uppercase tracking-[.16em] text-lilac-deep">20–30 second preview</p>
@@ -36,9 +36,9 @@ export function Music() {
             <p className="text-sm leading-6 text-ink/65">If you&apos;d like to leave a coin in my digital hat, thank you. Every contribution supports this journey.</p>
             {/* TODO: Bellas echten PayPal.me-Link einsetzen. */}
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <a className="rounded-full bg-lilac-deep px-4 py-3 text-center text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink" href={`${paypalMeBaseUrl}/1EUR`} target="_blank" rel="noreferrer">1 € spendieren</a>
-              <a className="rounded-full border border-lilac-deep bg-mist px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={`${paypalMeBaseUrl}/5EUR`} target="_blank" rel="noreferrer">5 € spendieren</a>
-              <a className="rounded-full border border-lilac-deep bg-[#f0e6f6] px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={paypalMeBaseUrl} target="_blank" rel="noreferrer">Wunschbetrag einwerfen (ab 1 €) ✨</a>
+              <a className="rounded-full bg-lilac-deep px-4 py-3 text-center text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink" href={`${paypalMeBaseUrl}/1EUR`} target="_blank" rel="noreferrer">Leave €1</a>
+              <a className="rounded-full border border-lilac-deep bg-mist px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={`${paypalMeBaseUrl}/5EUR`} target="_blank" rel="noreferrer">Leave €5</a>
+              <a className="rounded-full border border-lilac-deep bg-[#f0e6f6] px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={paypalMeBaseUrl} target="_blank" rel="noreferrer">Choose an amount (from €1)</a>
             </div>
             <p className="mt-4 text-xs leading-5 text-ink/50">PayPal.Me placeholder active — replace the link before sharing this page.</p>
           </div>
