@@ -57,23 +57,24 @@ export function Music() {
             {hatPopId > 0 && (
               <span key={hatPopId} className="pointer-events-none absolute -top-16 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
                 <svg className="hat-pop h-16 w-[4.5rem]" viewBox="0 0 72 64" fill="none">
-                  <g transform="translate(36 15)">
+                  <path d="M19 27c0-7.5 7.6-12 17-12s17 4.5 17 12l5 19H14l5-19Z" fill="#70517f" />
+                  <ellipse cx="36" cy="27" rx="17" ry="7" fill="#352d42" />
+                  <ellipse cx="36" cy="26" rx="12.5" ry="4.5" fill="#fbf8ff" opacity=".9" />
+                  <path d="M10 45c0-2.4 2-4.3 4.4-4.3h43.2c2.4 0 4.4 1.9 4.4 4.3v2H10v-2Z" fill="#352d42" />
+                  <path d="M15 47h42" stroke="#ae96c4" strokeWidth="2" strokeLinecap="round" />
+                  <g transform="translate(36 45)">
                     <g className="hat-passiflora">
-                    <path d="M0-12C-5-15-8-10-5-6C-10-7-12-2-8 1C-12 4-9 9-4 7C-4 13 2 14 4 8C8 11 12 7 8 3C13 0 10-5 6-4C8-10 3-14 0-12Z" fill="#e9def1" stroke="#70517f" strokeWidth="1.7" strokeLinejoin="round" />
-                    <g stroke="#70517f" strokeWidth="1.35" strokeLinecap="round">
-                      <path d="M0-8V-12" /><path d="M5-6l4-4" /><path d="M8 0h5" /><path d="M5 6l4 4" /><path d="M0 8v5" /><path d="M-5 6l-4 4" /><path d="M-8 0h-5" /><path d="M-5-6l-4-4" />
-                    </g>
-                    <circle r="4.5" fill="#352d42" />
-                    <circle r="2.2" fill="#e2bd68" />
-                    <path d="M-1-4C-3-8-5-10-7-12M1-4C4-7 5-10 6-12M0-4v-7" stroke="#e2bd68" strokeWidth="1.35" strokeLinecap="round" />
+                      <path d="M0-10C-4-13-7-8-4-5C-9-6-10-1-7 1C-10 4-7 8-3 6C-3 11 2 12 3 7C7 9 10 6 7 2C11 0 8-4 5-3C7-8 3-12 0-10Z" fill="#e9def1" stroke="#70517f" strokeWidth="1.4" strokeLinejoin="round" />
+                      <g stroke="#70517f" strokeWidth="1.1" strokeLinecap="round">
+                        <path d="M0-7v-4" /><path d="M5-4l3-3" /><path d="M7 0h4" /><path d="M4 5l3 3" /><path d="M0 7v4" /><path d="M-4 5l-3 3" /><path d="M-7 0h-4" /><path d="M-4-4l-3-3" />
+                      </g>
+                      <circle r="3.7" fill="#352d42" />
+                      <circle r="1.8" fill="#e2bd68" />
+                      <path d="M-1-3C-3-6-4-8-6-9M1-3C3-6 4-8 5-9M0-3v-5" stroke="#e2bd68" strokeWidth="1.1" strokeLinecap="round" />
                     </g>
                   </g>
-                  <path d="M22 18h28l-4 25H26l-4-25Z" fill="#70517f" />
-                  <path d="M26 21h20l-1 8H27l-1-8Z" fill="#fbf8ff" opacity=".9" />
-                  <path d="M12 43c0-2.2 1.8-4 4-4h40c2.2 0 4 1.8 4 4v2H12v-2Z" fill="#352d42" />
-                  <path d="M16 45h40" stroke="#ae96c4" strokeWidth="2" strokeLinecap="round" />
-                  <circle cx="11" cy="23" r="2" fill="#e2bd68" />
-                  <circle cx="61" cy="30" r="1.5" fill="#e2bd68" />
+                  <circle cx="12" cy="20" r="2" fill="#e2bd68" />
+                  <circle cx="61" cy="24" r="1.5" fill="#e2bd68" />
                 </svg>
               </span>
             )}
