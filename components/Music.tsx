@@ -56,13 +56,24 @@ export function Music() {
           <div className="relative mt-7">
             {hatPopId > 0 && (
               <span key={hatPopId} className="pointer-events-none absolute -top-16 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
-                <svg className="hat-pop h-14 w-16" viewBox="0 0 64 56" fill="none">
-                  <path d="M20 12h24l-4 25H24l-4-25Z" fill="#70517f" />
-                  <path d="M24 14h16l-1 8H25l-1-8Z" fill="#fbf8ff" opacity=".9" />
-                  <path d="M11 37c0-2.2 1.8-4 4-4h34c2.2 0 4 1.8 4 4v2H11v-2Z" fill="#352d42" />
-                  <path d="M15 39h34" stroke="#ae96c4" strokeWidth="2" strokeLinecap="round" />
-                  <circle cx="10" cy="18" r="2" fill="#e2bd68" />
-                  <circle cx="54" cy="24" r="1.5" fill="#e2bd68" />
+                <svg className="hat-pop h-16 w-[4.5rem]" viewBox="0 0 72 64" fill="none">
+                  <g transform="translate(36 15)">
+                    <g className="hat-passiflora">
+                    <path d="M0-12C-5-15-8-10-5-6C-10-7-12-2-8 1C-12 4-9 9-4 7C-4 13 2 14 4 8C8 11 12 7 8 3C13 0 10-5 6-4C8-10 3-14 0-12Z" fill="#e9def1" stroke="#70517f" strokeWidth="1.7" strokeLinejoin="round" />
+                    <g stroke="#70517f" strokeWidth="1.35" strokeLinecap="round">
+                      <path d="M0-8V-12" /><path d="M5-6l4-4" /><path d="M8 0h5" /><path d="M5 6l4 4" /><path d="M0 8v5" /><path d="M-5 6l-4 4" /><path d="M-8 0h-5" /><path d="M-5-6l-4-4" />
+                    </g>
+                    <circle r="4.5" fill="#352d42" />
+                    <circle r="2.2" fill="#e2bd68" />
+                    <path d="M-1-4C-3-8-5-10-7-12M1-4C4-7 5-10 6-12M0-4v-7" stroke="#e2bd68" strokeWidth="1.35" strokeLinecap="round" />
+                    </g>
+                  </g>
+                  <path d="M22 18h28l-4 25H26l-4-25Z" fill="#70517f" />
+                  <path d="M26 21h20l-1 8H27l-1-8Z" fill="#fbf8ff" opacity=".9" />
+                  <path d="M12 43c0-2.2 1.8-4 4-4h40c2.2 0 4 1.8 4 4v2H12v-2Z" fill="#352d42" />
+                  <path d="M16 45h40" stroke="#ae96c4" strokeWidth="2" strokeLinecap="round" />
+                  <circle cx="11" cy="23" r="2" fill="#e2bd68" />
+                  <circle cx="61" cy="30" r="1.5" fill="#e2bd68" />
                 </svg>
               </span>
             )}
