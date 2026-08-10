@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { ScrollReveal } from "./ScrollReveal";
 
 const paypalMeBaseUrl = "https://paypal.me/Bellahealth";
@@ -11,6 +14,9 @@ const musicPreviews = [
 ];
 
 export function Music() {
+  const [hatPopId, setHatPopId] = useState(0);
+  const celebrateSupport = () => setHatPopId((currentId) => currentId + 1);
+
   return <section id="music" className="bg-[#e9dff2] px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
     <div className="mx-auto max-w-7xl">
       <ScrollReveal>
@@ -47,12 +53,25 @@ export function Music() {
             ))}
           </div>
 
-          <div className="mt-7">
+          <div className="relative mt-7">
+            {hatPopId > 0 && (
+              <span key={hatPopId} className="pointer-events-none absolute -top-16 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
+                <svg className="hat-pop h-14 w-16" viewBox="0 0 64 56" fill="none">
+                  <path d="M20 12h24l-4 25H24l-4-25Z" fill="#70517f" />
+                  <path d="M24 14h16l-1 8H25l-1-8Z" fill="#fbf8ff" opacity=".9" />
+                  <path d="M11 37c0-2.2 1.8-4 4-4h34c2.2 0 4 1.8 4 4v2H11v-2Z" fill="#352d42" />
+                  <path d="M15 39h34" stroke="#ae96c4" strokeWidth="2" strokeLinecap="round" />
+                  <circle cx="10" cy="18" r="2" fill="#e2bd68" />
+                  <circle cx="54" cy="24" r="1.5" fill="#e2bd68" />
+                </svg>
+              </span>
+            )}
+            <p className="sr-only" aria-live="polite">{hatPopId > 0 ? "A little coin for the hat — thank you." : ""}</p>
             <p className="text-sm leading-6 text-ink/65">If you&apos;d like to leave a coin in my digital hat, thank you. Every contribution supports this journey.</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              <a className="rounded-full bg-lilac-deep px-4 py-3 text-center text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink" href={`${paypalMeBaseUrl}/1EUR`} target="_blank" rel="noreferrer">Leave €1</a>
-              <a className="rounded-full border border-lilac-deep bg-mist px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={`${paypalMeBaseUrl}/5EUR`} target="_blank" rel="noreferrer">Leave €5</a>
-              <a className="rounded-full border border-lilac-deep bg-[#f0e6f6] px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={paypalMeBaseUrl} target="_blank" rel="noreferrer">Choose an amount (from €1)</a>
+              <a onClick={celebrateSupport} className="rounded-full bg-lilac-deep px-4 py-3 text-center text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink" href={`${paypalMeBaseUrl}/1EUR`} target="_blank" rel="noreferrer">Leave €1</a>
+              <a onClick={celebrateSupport} className="rounded-full border border-lilac-deep bg-mist px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={`${paypalMeBaseUrl}/5EUR`} target="_blank" rel="noreferrer">Leave €5</a>
+              <a onClick={celebrateSupport} className="rounded-full border border-lilac-deep bg-[#f0e6f6] px-4 py-3 text-center text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist" href={paypalMeBaseUrl} target="_blank" rel="noreferrer">Choose an amount (from €1)</a>
             </div>
             <p className="mt-4 text-xs leading-5 text-ink/50">Payments are handled securely by PayPal.</p>
           </div>
