@@ -57,11 +57,12 @@ export function Music() {
             {hatPopId > 0 && (
               <span key={hatPopId} className="pointer-events-none absolute -top-16 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
                 <svg className="hat-pop h-16 w-[4.5rem]" viewBox="0 0 72 64" fill="none">
-                  <path d="M19 27c0-7.5 7.6-12 17-12s17 4.5 17 12l5 19H14l5-19Z" fill="#70517f" />
-                  <ellipse cx="36" cy="27" rx="17" ry="7" fill="#352d42" />
-                  <ellipse cx="36" cy="26" rx="12.5" ry="4.5" fill="#fbf8ff" opacity=".9" />
-                  <path d="M10 45c0-2.4 2-4.3 4.4-4.3h43.2c2.4 0 4.4 1.9 4.4 4.3v2H10v-2Z" fill="#352d42" />
-                  <path d="M15 47h42" stroke="#ae96c4" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M17 23c1 18 7.5 29 19 29s18-11 19-29H17Z" fill="#70517f" />
+                  <path d="M21 28c2.6 12.5 7.4 18.5 15 18.5s12.4-6 15-18.5" stroke="#ae96c4" strokeWidth="1.5" strokeLinecap="round" opacity=".75" />
+                  <ellipse cx="36" cy="23" rx="22" ry="8" fill="#352d42" />
+                  <ellipse cx="36" cy="22" rx="16.5" ry="5.3" fill="#fbf8ff" />
+                  <ellipse cx="36" cy="22" rx="11.5" ry="3.3" fill="#e9def1" />
+                  <path d="M22 24c3.5 2.5 8.1 3.7 14 3.7s10.5-1.2 14-3.7" stroke="#70517f" strokeWidth="1.3" strokeLinecap="round" opacity=".7" />
                   <g transform="translate(36 45)">
                     <g className="hat-passiflora">
                       <path d="M0-10C-4-13-7-8-4-5C-9-6-10-1-7 1C-10 4-7 8-3 6C-3 11 2 12 3 7C7 9 10 6 7 2C11 0 8-4 5-3C7-8 3-12 0-10Z" fill="#e9def1" stroke="#70517f" strokeWidth="1.4" strokeLinejoin="round" />
@@ -74,7 +75,7 @@ export function Music() {
                     </g>
                   </g>
                   <circle cx="12" cy="20" r="2" fill="#e2bd68" />
-                  <circle cx="61" cy="24" r="1.5" fill="#e2bd68" />
+                  <circle cx="61" cy="19" r="1.5" fill="#e2bd68" />
                 </svg>
               </span>
             )}
