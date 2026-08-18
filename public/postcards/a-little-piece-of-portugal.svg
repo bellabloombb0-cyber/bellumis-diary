@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="240" y1="90" x2="1340" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EADFF1"/>
+      <stop offset=".52" stop-color="#F8F2EE"/>
+      <stop offset="1" stop-color="#D8C7D9"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="460" y1="700" x2="1240" y2="1040" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FA8A2"/>
+      <stop offset="1" stop-color="#526F6E"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="50" width="1440" height="1000" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#70517F" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1100" fill="#EEE7F5"/>
+  <rect x="104" y="94" width="1392" height="912" rx="40" fill="url(#sky)" filter="url(#shadow)"/>
+  <circle cx="1180" cy="298" r="104" fill="#E9C86B" opacity=".88"/>
+  <path d="M104 721C305 661 462 691 641 760C833 834 1008 822 1198 745C1326 693 1425 687 1496 702V1006H104V721Z" fill="url(#sea)"/>
+  <path d="M104 797C264 753 411 770 560 831C724 898 889 899 1059 835C1256 761 1396 769 1496 805V1006H104V797Z" fill="#D4DDBE"/>
+  <path d="M104 868C315 814 466 859 633 927C822 1004 1002 971 1170 902C1302 847 1408 857 1496 886V1006H104V868Z" fill="#88A096"/>
+  <path d="M250 659C377 571 479 536 602 545C726 553 842 617 962 600C1083 583 1145 502 1247 493C1328 486 1391 516 1441 559" stroke="#7D8B70" stroke-width="20" stroke-linecap="round"/>
+  <path d="M250 659C377 571 479 536 602 545C726 553 842 617 962 600C1083 583 1145 502 1247 493C1328 486 1391 516 1441 559" stroke="#F5F0E9" stroke-width="8" stroke-linecap="round"/>
+  <g opacity=".85" stroke="#70517F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="220" cy="245" r="32"/>
+    <path d="M220 213C198 175 161 181 187 218M188 245C150 229 145 190 183 211M220 213C242 175 279 181 253 218M252 245C290 229 295 190 257 211M220 277C198 315 161 309 187 272M188 245C150 261 145 300 183 279M220 277C242 315 279 309 253 272M252 245C290 261 295 300 257 279"/>
+    <path d="M220 277V325"/>
+  </g>
+  <g fill="#FBF8FF" opacity=".95">
+    <rect x="270" y="185" width="1060" height="310" rx="32"/>
+  </g>
+  <text x="800" y="262" text-anchor="middle" fill="#70517F" font-family="Georgia, serif" font-size="28" letter-spacing="8">A LITTLE PIECE OF PORTUGAL</text>
+  <text x="800" y="338" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">May you always find your way back</text>
+  <text x="800" y="404" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">to the places — and the parts of yourself —</text>
+  <text x="800" y="470" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">that feel like home.</text>
+  <text x="800" y="953" text-anchor="middle" fill="#FBF8FF" font-family="Georgia, serif" font-size="31" font-style="italic">with love, Bellumi’s Diary</text>
+</svg>
