@@ -9,6 +9,9 @@ export function Footer() {
           <PassifloraLogo className="float-flower mx-auto h-12 w-12 text-lilac-deep" />
           <p className="mt-5 font-[family-name:var(--font-display)] text-2xl leading-tight text-ink">You made it all the way here.</p>
           <p className="mt-2 text-sm leading-6 text-ink/60">Keep going gently.</p>
+          <a href="/a-little-gift" className="mt-5 inline-flex rounded-full border border-lilac-deep bg-mist px-5 py-2.5 text-sm font-bold text-lilac-deep transition hover:-translate-y-0.5 hover:bg-lilac-deep hover:text-mist">
+            Here’s a little gift for you →
+          </a>
         </div>
       </ScrollReveal>
 
