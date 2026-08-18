@@ -13,8 +13,8 @@ const notes = {
   },
   wanted: {
     number: "02",
-    title: "What I actually wanted to say.",
-    text: "This note is still being written.",
+    title: "WHAT I ACTUALLY WANTED TO SAY",
+    text: "",
   },
 };
 
@@ -72,7 +72,79 @@ export function Journey() {
         <article id="roots-note" className="letter-open mx-auto mt-7 max-w-5xl rounded-[2rem] bg-[#f2ecf8] p-7 text-ink shadow-sm sm:mt-9 sm:p-12">
           <p className="section-kicker text-lilac-deep">{activeNote.number} — Roots note</p>
           <h3 className="mt-5 font-[family-name:var(--font-display)] text-4xl leading-tight sm:text-5xl">{activeNote.title}</h3>
-          <p className="mt-7 max-w-2xl text-base leading-8 text-ink/70 sm:text-lg">{activeNote.text}</p>
+          {openNote === "wanted" ? (
+            <div className="mt-7 max-w-3xl space-y-7 text-base leading-8 text-ink/75 sm:text-lg">
+              <p className="font-[family-name:var(--font-display)] text-2xl leading-tight italic text-lilac-deep sm:text-3xl">
+                Things we swallow just to keep the peace.
+              </p>
+
+              <div className="space-y-1 font-[family-name:var(--font-display)] text-2xl leading-tight text-ink sm:text-3xl">
+                <p>“It’s fine.”</p>
+                <p>“I don’t mind.”</p>
+                <p>“No worries.”</p>
+                <p>“Whatever you want.”</p>
+              </div>
+
+              <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">But is it?</p>
+
+              <p>
+                Sometimes we swallow what we actually feel because we don&apos;t want to create conflict, disappoint someone, seem difficult, or be <em className="font-[family-name:var(--font-display)] text-xl text-lilac-deep sm:text-2xl">too much.</em>
+              </p>
+
+              <div className="font-[family-name:var(--font-display)] text-2xl leading-tight text-ink sm:text-3xl">
+                <p>And sometimes we do the exact opposite.</p>
+                <p className="mt-5">We explain.</p>
+                <p>And explain.</p>
+                <p>And explain some more.</p>
+              </div>
+
+              <p>
+                Trying to find the perfect words that will finally make someone understand why something hurt us.
+              </p>
+
+              <p>
+                But there is a space between swallowing everything and explaining everything.
+              </p>
+              <p className="font-[family-name:var(--font-display)] text-4xl leading-tight text-lilac-deep sm:text-5xl">The truth.</p>
+
+              <div className="rounded-[1.5rem] bg-mist p-6 sm:p-8">
+                <p className="font-[family-name:var(--font-display)] text-xl italic leading-tight text-ink/60 sm:text-2xl">Not: “It’s fine.”</p>
+                <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">But: “That hurt me.”</p>
+                <p className="mt-7 font-[family-name:var(--font-display)] text-xl leading-tight text-ink/60 sm:text-2xl">Not a ten-minute explanation of why something made you uncomfortable.</p>
+                <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">Just: “I’m not comfortable with that.”</p>
+                <p className="mt-7 font-[family-name:var(--font-display)] text-xl italic leading-tight text-ink/60 sm:text-2xl">Not: “Whatever you want.”</p>
+                <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">But: “Actually, I’d prefer this.”</p>
+              </div>
+
+              <div className="border-y border-lilac/40 py-8 text-center">
+                <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-ink sm:text-4xl">Your feelings don&apos;t need a presentation.</p>
+                <div className="mt-6 space-y-4">
+                  <p>You don&apos;t have to convince someone that you&apos;re allowed to feel what you feel.</p>
+                  <p>And you don&apos;t have to make yourself smaller just to keep the peace.</p>
+                  <p>Sometimes one honest sentence is enough.</p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p>Next time you hear yourself say:</p>
+                <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">“It’s fine.”</p>
+                <p className="mt-7">Ask yourself:</p>
+                <div className="mt-3 space-y-2 font-[family-name:var(--font-display)] text-2xl leading-tight text-ink sm:text-3xl">
+                  <p>Is it?</p>
+                  <p>What are you actually feeling?</p>
+                  <p>And what would you say if you didn&apos;t have to justify it?</p>
+                </div>
+              </div>
+
+              <p className="pt-3 text-center font-[family-name:var(--font-display)] text-4xl leading-[1.05] text-lilac-deep sm:text-5xl">
+                Don’t swallow it.<br />
+                <em className="font-normal text-ink">Don’t overexplain it.</em><br />
+                <em className="font-normal text-ink">Just say it.</em>
+              </p>
+            </div>
+          ) : (
+            <p className="mt-7 max-w-2xl text-base leading-8 text-ink/70 sm:text-lg">{activeNote.text}</p>
+          )}
         </article>
       )}
     </section>
