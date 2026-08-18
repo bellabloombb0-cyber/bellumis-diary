@@ -22,11 +22,11 @@ export default function LittleGiftPage() {
 
         <section className="mt-12 overflow-hidden rounded-[2rem] border-8 border-mist bg-mist shadow-xl shadow-lilac/20 sm:mt-14">
           {/* TODO: Replace this postcard artwork with Bella’s Portugal photo when it is ready. */}
-          <img src="/postcards/a-little-piece-of-portugal.svg" alt="Digital postcard with a soft Portugal-inspired landscape and a message about finding home" className="block w-full" />
+          <img src="/postcards/a-little-piece-of-portugal.svg?v=2" alt="Digital postcard with a soft Portugal-inspired landscape and a message about finding home" className="block w-full" />
         </section>
 
         <div className="mt-9 text-center">
-          <a href="/postcards/a-little-piece-of-portugal.svg" download="a-little-piece-of-portugal.svg" className="inline-flex rounded-full bg-lilac-deep px-7 py-3.5 text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink">
+          <a href="/postcards/a-little-piece-of-portugal.svg?v=2" download="a-little-piece-of-portugal.svg" className="inline-flex rounded-full bg-lilac-deep px-7 py-3.5 text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink">
             Download your postcard
           </a>
           <p className="mt-4 text-xs leading-5 text-ink/50">A small digital gift from Bellumi’s Diary.</p>
