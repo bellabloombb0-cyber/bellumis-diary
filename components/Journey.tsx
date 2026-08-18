@@ -111,9 +111,6 @@ export function Journey() {
                 <p className="font-[family-name:var(--font-display)] text-xl italic leading-tight text-ink/60 sm:text-2xl">Not: “It’s fine.”</p>
                 <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">But: “That hurt me.”</p>
                 <p className="mt-7 font-[family-name:var(--font-display)] text-xl leading-tight text-ink/60 sm:text-2xl">Not a ten-minute explanation of why something made you uncomfortable.</p>
-                <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">Just: “I’m not comfortable with that.”</p>
-                <p className="mt-7 font-[family-name:var(--font-display)] text-xl italic leading-tight text-ink/60 sm:text-2xl">Not: “Whatever you want.”</p>
-                <p className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-lilac-deep sm:text-4xl">But: “Actually, I’d prefer this.”</p>
               </div>
 
               <div className="border-y border-lilac/40 py-8 text-center">
