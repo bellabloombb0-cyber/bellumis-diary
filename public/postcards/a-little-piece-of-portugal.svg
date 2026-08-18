@@ -29,9 +29,8 @@
   <g fill="#FBF8FF" opacity=".95">
     <rect x="270" y="185" width="1060" height="310" rx="32"/>
   </g>
-  <text x="800" y="262" text-anchor="middle" fill="#70517F" font-family="Georgia, serif" font-size="28" letter-spacing="8">A LITTLE GIFT FOR YOU</text>
-  <text x="800" y="338" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">May you always find your way back</text>
-  <text x="800" y="404" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">to the places — and the parts of yourself —</text>
-  <text x="800" y="470" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">that feel like home.</text>
+  <text x="800" y="325" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">May you always find your way back</text>
+  <text x="800" y="391" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">to the places — and the parts of yourself —</text>
+  <text x="800" y="457" text-anchor="middle" fill="#352D42" font-family="Georgia, serif" font-size="51">that feel like home.</text>
   <text x="800" y="953" text-anchor="middle" fill="#FBF8FF" font-family="Georgia, serif" font-size="31" font-style="italic">with love, Bellumi’s Diary</text>
 </svg>
