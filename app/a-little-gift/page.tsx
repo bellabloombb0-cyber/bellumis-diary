@@ -15,9 +15,8 @@ export default function LittleGiftPage() {
 
         <section className="mt-12 text-center sm:mt-16">
           <PassifloraLogo className="mx-auto h-14 w-14 text-lilac-deep" />
-          <p className="section-kicker mt-6 text-lilac-deep">A little gift for you</p>
-          <h1 className="mt-5 font-[family-name:var(--font-display)] text-5xl leading-[.92] sm:text-7xl">A little<br /><em className="font-normal text-lilac-deep">gift.</em></h1>
-          <p className="mx-auto mt-6 max-w-lg text-base leading-8 text-ink/65">A small postcard to keep, save, or send to someone who needs a little reminder of home.</p>
+          <h1 className="mt-6 font-[family-name:var(--font-display)] text-4xl leading-tight text-lilac-deep sm:text-5xl">A little gift for you</h1>
+          <p className="mx-auto mt-5 max-w-lg text-base leading-8 text-ink/65">A small postcard to keep, save, or send to someone who needs a little reminder of home.</p>
         </section>
 
         <section className="mt-12 overflow-hidden rounded-[2rem] border-8 border-mist bg-mist shadow-xl shadow-lilac/20 sm:mt-14">
