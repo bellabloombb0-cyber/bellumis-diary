@@ -20,11 +20,11 @@ export default function LittleGiftPage() {
         </section>
 
         <section className="mt-12 overflow-hidden rounded-[2rem] border-8 border-mist bg-mist shadow-xl shadow-lilac/20 sm:mt-14">
-          <img src="/postcards/bellumis-postcard.png?v=1" alt="Digital postcard with a Portuguese coastal landscape, flowers, and cats" className="block w-full" />
+          <img src="/postcards/bellumis-postcard.png?v=2" alt="Digital postcard with a Portuguese coastal landscape, flowers, and cats" className="block w-full" />
         </section>
 
         <div className="mt-9 text-center">
-          <a href="/postcards/bellumis-postcard.png?v=1" download="bellumis-postcard.png" className="inline-flex rounded-full bg-lilac-deep px-7 py-3.5 text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink">
+          <a href="/postcards/bellumis-postcard.png?v=2" download="bellumis-postcard.png" className="inline-flex rounded-full bg-lilac-deep px-7 py-3.5 text-sm font-bold text-mist transition hover:-translate-y-0.5 hover:bg-ink">
             Download your postcard
           </a>
           <p className="mt-4 text-xs leading-5 text-ink/50">A small digital gift from Bellumi’s Diary.</p>
