@@ -8,7 +8,7 @@ export function Philosophy() {
 
   return <section id="philosophy" className="world-letter px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
     <ScrollReveal className="mx-auto max-w-5xl text-center">
-      <p className="section-kicker text-lilac-deep">01 — A letter for you</p>
+        <p className="section-kicker text-lilac-deep">02 — A letter for you</p>
       <h2 className="mt-5 font-[family-name:var(--font-display)] text-5xl leading-[.9] sm:text-7xl">A small letter,<br /><em className="font-normal text-lilac-deep">from my heart to yours.</em></h2>
       <p className="mx-auto mt-7 max-w-lg text-base leading-8 text-ink/65">A story about self-acceptance, freedom, and building a life around what makes you feel alive.</p>
       <button type="button" onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen} aria-controls="letter-content" className="mt-9 inline-flex items-center rounded-full bg-lilac-deep px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-ink">{isOpen ? "Close the letter" : "Read the letter"}</button>
