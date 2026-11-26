@@ -29,7 +29,7 @@ export function Music() {
   return <section id="music" className="music-world px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
     <div className="mx-auto max-w-7xl">
       <ScrollReveal>
-        <p className="section-kicker text-[#e6d5ef]">02 — Music</p>
+        <p className="section-kicker text-[#e6d5ef]">01 — Music</p>
         <h2 className="mt-9 font-[family-name:var(--font-display)] text-5xl leading-[.88] text-mist sm:text-7xl">The thing<br /><em className="font-normal text-[#ddc5e9]">I love.</em></h2>
       </ScrollReveal>
 
