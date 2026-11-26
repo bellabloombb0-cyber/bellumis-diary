@@ -12,10 +12,10 @@ export function Hero() {
       </h1>
       <div className="mt-8 flex max-w-xl flex-wrap items-center gap-x-6 gap-y-3 text-sm leading-7 text-ink/70 sm:text-base">
         <p>An honest, living space for music, Portugal, and choosing a softer life.</p>
-        <a href="#philosophy" className="hero-scroll-link">Enter slowly</a>
+        <a href="#music" className="hero-scroll-link">Scroll into the music</a>
       </div>
     </div>
-    <div className="hero-flower-wrap"><PassifloraScene /></div>
-    <p className="hero-side-note">Click the flower<br />and watch it bloom.</p>
+    <div className="hero-flower-wrap"><PassifloraScene openOnScroll /></div>
+    <p className="hero-side-note">Scroll to open<br />the flower.</p>
   </section>;
 }
