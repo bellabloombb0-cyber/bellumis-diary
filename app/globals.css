@@ -268,3 +268,9 @@ a, button { -webkit-tap-highlight-color: transparent; }
 @keyframes journey-halo-arrive { 0% { opacity: 0; transform: translate(-50%,-50%) translateZ(-70px) scale(.2); } 56% { opacity: 1; transform: translate(-50%,-50%) translateZ(-70px) scale(1.33); } 100% { opacity: 1; transform: translate(-50%,-50%) translateZ(-70px) scale(1.1); } }
 @keyframes journey-prompt-arrive { 0%, 60% { opacity: 0; transform: translateY(.7rem); } 100% { opacity: 1; transform: translateY(0); } }
 @media (max-width: 768px) { .journey-scene { height: 230vh; } .journey-scene--chapter-2 .journey-flower { width: 25rem; transform: translate(-50%,-57%) rotateZ(7deg); } .journey-flower__wordmark { font-size: clamp(2.4rem, 12vw, 4.5rem); } }
+
+
+/* Let the hand-painted guitar stay recognisable inside the flower. */
+.journey-flower__guitar { mix-blend-mode: normal; }
+.journey-flower__guitar img { object-position: 50% 100%; transform: scale(1.16); }
+.journey-scene--chapter-2 .journey-flower__guitar { opacity: .62; }
