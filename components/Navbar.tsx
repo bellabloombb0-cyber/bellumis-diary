@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-const links = [["A Letter for You", "philosophy"], ["Music", "music"], ["My Roots", "portugal"], ["Leave a note", "contact"]];
+const links = [["Music", "music"], ["My Roots", "portugal"], ["A Letter for You", "philosophy"], ["Leave a note", "contact"]];
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
