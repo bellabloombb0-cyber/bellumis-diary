@@ -1,37 +1,123 @@
 @import "tailwindcss";
-@theme { --font-display: var(--font-display); --font-sans: var(--font-sans); --color-ink: #352d42; --color-mist: #fbf8ff; --color-lilac: #ae96c4; --color-lilac-deep: #70517f; --color-clay: #a775a7; --color-moss: #7d8b70; --color-sand: #e9def1; }
-:root { --paper: #fbf8ff; --ink: #352d42; }
+
+@theme {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --color-ink: #2b2038;
+  --color-mist: #fffafe;
+  --color-lilac: #b49acd;
+  --color-lilac-deep: #654072;
+  --color-clay: #b37a9f;
+  --color-moss: #55715e;
+  --color-sand: #eadbed;
+}
+
+:root { --paper: #fbf7ff; --ink: #2b2038; --night: #24172f; }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: var(--font-sans), sans-serif; }
-::selection { background: #d9cbe0; color: #353038; }
+html { scroll-behavior: smooth; background: var(--night); }
+body { overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--font-sans), sans-serif; }
+::selection { background: #d9c2e6; color: #2b2038; }
+a, button { -webkit-tap-highlight-color: transparent; }
 .flower-line { stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .section-kicker { letter-spacing: .18em; text-transform: uppercase; font-size: .69rem; font-weight: 700; }
-.scroll-reveal { opacity: 0; transform: translateY(1.75rem) scale(.985); transition: opacity 800ms ease, transform 900ms cubic-bezier(.22, 1, .36, 1); }
+.scroll-reveal { opacity: 0; transform: translateY(2rem) scale(.985); transition: opacity 800ms ease, transform 1000ms cubic-bezier(.22, 1, .36, 1); }
 .scroll-reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
-.hero-copy { animation: hero-arrive 900ms cubic-bezier(.22, 1, .36, 1) both; }
-.hero-glow { animation: glow-drift 12s ease-in-out infinite alternate; }
+.letter-open { animation: letter-open 600ms cubic-bezier(.22, 1, .36, 1) both; }
 .float-flower { animation: flower-float 5s ease-in-out infinite; transform-origin: center; }
-.letter-open { animation: letter-open 500ms cubic-bezier(.22, 1, .36, 1) both; }
-main h1, main h2 { transition: transform 450ms cubic-bezier(.22, 1, .36, 1), text-shadow 450ms ease; }
-main section img:not([alt="Passiflora logo"]) { transition: transform 700ms cubic-bezier(.22, 1, .36, 1), filter 700ms ease; }
 .hat-pop { animation: hat-pop 1100ms cubic-bezier(.16, 1, .3, 1) both; filter: drop-shadow(0 .45rem .45rem rgba(53, 45, 66, .2)); transform-origin: center bottom; }
 .hat-passiflora { animation: passiflora-twirl 800ms cubic-bezier(.16, 1, .3, 1) both; transform-box: fill-box; transform-origin: center; }
 
-@keyframes hero-arrive { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: translateY(0); } }
-@keyframes glow-drift { from { transform: translate3d(-2%, -1%, 0) scale(1); opacity: .55; } to { transform: translate3d(3%, 2%, 0) scale(1.08); opacity: .9; } }
-@keyframes flower-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-.45rem) rotate(3deg); } }
-@keyframes letter-open { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+.bellumi-nav { border-bottom: 1px solid rgba(255,255,255,.12); background: rgba(255,250,254,.72); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(101,64,114,.06); }
+
+/* The opening world: only transform and opacity animate, keeping it light on mobile. */
+.bellumi-hero { min-height: 46rem; background: radial-gradient(circle at 70% 15%, rgba(253,235,255,.94), transparent 24rem), radial-gradient(circle at 14% 81%, rgba(184,207,181,.52), transparent 31rem), linear-gradient(130deg, #faf5ff 5%, #eadbef 51%, #dfd0e8 100%); perspective: 1200px; }
+.hero-grain { position: absolute; inset: 0; opacity: .28; pointer-events: none; background-image: radial-gradient(rgba(66,39,76,.15) .7px, transparent .8px); background-size: 7px 7px; mask-image: linear-gradient(to bottom, black, transparent 80%); }
+.hero-haze { position: absolute; width: 35rem; height: 35rem; border-radius: 999px; filter: blur(14px); pointer-events: none; }
+.hero-haze--one { right: -15rem; top: 3rem; border: 1px solid rgba(101,64,114,.16); box-shadow: inset 0 0 7rem rgba(255,255,255,.32); transform: rotateX(60deg) rotateZ(-18deg); }
+.hero-haze--two { left: -14rem; bottom: -12rem; background: rgba(165,120,151,.18); filter: blur(60px); }
+.hero-copy { text-shadow: 0 1px 0 rgba(255,255,255,.75); }
+.hero-scroll-link { color: #654072; font-weight: 800; white-space: nowrap; transition: letter-spacing 300ms ease; }
+.hero-scroll-link:hover { letter-spacing: .045em; }
+.hero-flower-wrap { position: absolute; right: -2.8rem; top: 5.2rem; z-index: 2; width: min(56vw, 47rem); height: min(58vw, 47rem); transform: translateZ(0); }
+.hero-side-note { position: absolute; right: 4.2rem; bottom: 2.8rem; z-index: 3; color: rgba(43,32,56,.55); font-size: .7rem; line-height: 1.35; letter-spacing: .13em; text-align: right; text-transform: uppercase; }
+
+/* A code-native, layered passion flower. It supplies depth without a heavy canvas or WebGL download. */
+.passiflora-scene { --scene-x: 0; --scene-y: 0; position: relative; width: 100%; height: 100%; isolation: isolate; perspective: 1200px; cursor: crosshair; }
+.passiflora-trigger { position: absolute; left: 50%; top: 50%; z-index: 7; display: inline-flex; align-items: center; gap: .55rem; transform: translate(-50%, -50%) translateZ(90px); border: 1px solid rgba(101,64,114,.25); border-radius: 999px; background: rgba(255,250,254,.72); box-shadow: 0 1rem 3rem rgba(62,35,74,.15); color: #654072; cursor: pointer; font-size: .72rem; font-weight: 800; letter-spacing: .12em; padding: .8rem 1rem; text-transform: uppercase; transition: transform 350ms cubic-bezier(.22,1,.36,1), background 300ms ease; }
+.passiflora-trigger:hover { background: #fffafe; transform: translate(-50%, -50%) translateZ(90px) scale(1.05); }
+.passiflora-orbit { position: absolute; left: 50%; top: 50%; border: 1px solid rgba(101,64,114,.16); border-radius: 50%; pointer-events: none; transform-style: preserve-3d; }
+.passiflora-orbit--one { width: 88%; height: 41%; transform: translate(-50%,-50%) rotateX(70deg) rotateZ(-19deg) translate3d(calc(var(--scene-x) * 12px), calc(var(--scene-y) * 9px), -70px); }
+.passiflora-orbit--two { width: 64%; height: 64%; opacity: .7; transform: translate(-50%,-50%) rotateX(69deg) rotateZ(25deg) translate3d(calc(var(--scene-x) * -14px), calc(var(--scene-y) * -11px), -130px); }
+.passiflora-shadow { position: absolute; left: 50%; top: 57%; width: 50%; height: 14%; border-radius: 50%; background: rgba(59,31,68,.22); filter: blur(28px); transform: translate(-50%,-50%) rotateX(68deg) translate3d(calc(var(--scene-x) * -15px), calc(var(--scene-y) * -12px), -140px); }
+.passiflora-flower { position: absolute; left: 50%; top: 50%; width: 72%; aspect-ratio: 1; transform: translate(-50%,-50%) rotateX(calc(var(--scene-y) * -5deg)) rotateY(calc(var(--scene-x) * 6deg)); transform-style: preserve-3d; transition: transform 700ms cubic-bezier(.22,1,.36,1); }
+.passiflora-petals, .passiflora-filaments, .passiflora-center { position: absolute; inset: 0; transform-style: preserve-3d; }
+.passiflora-petals span { position: absolute; left: 50%; top: 50%; width: 28%; height: 53%; border-radius: 55% 55% 48% 48%; transform-origin: 50% 99%; }
+.passiflora-petals--back span { background: linear-gradient(160deg, #e0d5f0 0%, #b38bc7 51%, #765a99 100%); box-shadow: inset -8px -10px 18px rgba(82,44,99,.22), inset 4px 4px 10px rgba(255,255,255,.55), 0 .8rem 1.5rem rgba(69,39,79,.16); transform: translate(-50%,-94%) rotate(calc(var(--i) * 36deg)) translateZ(-18px) scale(.94); }
+.passiflora-petals--front span { width: 24%; height: 46%; background: linear-gradient(145deg, #fffafe 0%, #d8c1e7 55%, #9f70b3 100%); box-shadow: inset -7px -10px 15px rgba(72,41,90,.16), inset 5px 5px 11px rgba(255,255,255,.7), 0 .6rem 1.3rem rgba(69,39,79,.14); transform: translate(-50%,-92%) rotate(calc(18deg + var(--i) * 36deg)) translateZ(20px); }
+.passiflora-filaments i { position: absolute; left: 50%; top: 50%; width: 2.5%; height: 39%; border-radius: 999px; background: linear-gradient(to bottom, #6444a3, #a47ada 67%, #f0d791); box-shadow: 0 0 .55rem rgba(96,64,158,.4); transform-origin: 50% 96%; transform: translate(-50%,-96%) rotate(calc(var(--i) * 12.857deg)) translateZ(38px); }
+.passiflora-center { transform: translateZ(58px); }
+.passiflora-core { position: absolute; left: 50%; top: 50%; width: 25%; aspect-ratio: 1; border: 4px solid #493456; border-radius: 50%; background: radial-gradient(circle at 40% 36%, #f8e3a2 0 14%, #be954c 15% 31%, #2e2038 32% 100%); box-shadow: 0 0 0 7px #f1e2b5, 0 .8rem 1.4rem rgba(44,25,52,.25); transform: translate(-50%,-50%); }
+.passiflora-stamen { position: absolute; left: 50%; top: 50%; width: 10%; height: 31%; border-radius: 999px; background: linear-gradient(to bottom, #f8e499 0 52%, #8f8449 53%); box-shadow: 0 .25rem .5rem rgba(44,25,52,.22); transform-origin: 50% 95%; }
+.passiflora-stamen--left { transform: translate(-50%,-96%) rotate(-25deg); }
+.passiflora-stamen--middle { transform: translate(-50%,-96%) rotate(0deg) translateY(-7%); }
+.passiflora-stamen--right { transform: translate(-50%,-96%) rotate(25deg); }
+.passiflora-scene:not(.is-blooming):not(.passiflora-scene--compact) .passiflora-petals--back span { opacity: .78; transform: translate(-50%,-68%) rotate(calc(var(--i) * 36deg)) translateZ(-90px) scale(.24); }
+.passiflora-scene:not(.is-blooming):not(.passiflora-scene--compact) .passiflora-petals--front span { opacity: 0; transform: translate(-50%,-67%) rotate(calc(18deg + var(--i) * 36deg)) translateZ(-80px) scale(.15); }
+.passiflora-scene:not(.is-blooming):not(.passiflora-scene--compact) .passiflora-filaments, .passiflora-scene:not(.is-blooming):not(.passiflora-scene--compact) .passiflora-center { opacity: 0; }
+.passiflora-scene.is-blooming .passiflora-petals--back span { animation: petal-bloom-back 1450ms cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--i) * 45ms); }
+.passiflora-scene.is-blooming .passiflora-petals--front span { animation: petal-bloom-front 1250ms cubic-bezier(.16,1,.3,1) both; animation-delay: calc(160ms + var(--i) * 42ms); }
+.passiflora-scene.is-blooming .passiflora-filaments i { animation: filament-arrive 950ms cubic-bezier(.16,1,.3,1) both; animation-delay: calc(440ms + var(--i) * 20ms); }
+.passiflora-scene.is-blooming .passiflora-center { animation: center-arrive 780ms cubic-bezier(.16,1,.3,1) both 760ms; }
+.passiflora-scene.is-blooming .passiflora-trigger { opacity: 0; pointer-events: none; transform: translate(-50%,-50%) scale(.7); }
+.passiflora-scene--compact { min-height: 21rem; cursor: default; }
+.passiflora-scene--compact .passiflora-flower { animation: compact-float 7s ease-in-out infinite; }
+
+.world-letter { position: relative; overflow: hidden; background: radial-gradient(circle at 74% 3%, rgba(204,173,222,.33), transparent 29rem), #fffafe; }
+.world-letter::after { position: absolute; right: -10rem; bottom: -10rem; width: 30rem; height: 30rem; border: 1px solid rgba(101,64,114,.12); border-radius: 50%; content: ""; }
+.world-letter .scroll-reveal { position: relative; z-index: 1; }
+.world-letter article { position: relative; border: 1px solid rgba(101,64,114,.13); box-shadow: .9rem 1.2rem 0 rgba(196,169,209,.2), 0 2rem 4rem rgba(73,46,84,.1); transform: rotate(-.35deg); }
+
+.music-world { position: relative; overflow: hidden; background: radial-gradient(circle at 12% 15%, rgba(182,146,204,.22), transparent 24rem), linear-gradient(135deg, #281a33 0%, #35213f 50%, #59496d 100%); }
+.music-world::before { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 0 37%, rgba(255,255,255,.045) 37.2% 37.4%, transparent 37.6% 100%); content: ""; pointer-events: none; }
+.music-world .scroll-reveal { position: relative; z-index: 1; }
+.music-world .music-photo { box-shadow: 1.2rem 1.2rem 0 rgba(210,181,224,.12), 0 2rem 4rem rgba(9,5,13,.32); transform: rotate(-1.25deg); }
+.music-world .music-card { border: 1px solid rgba(222,199,235,.2); background: rgba(255,250,254,.96); box-shadow: 0 2rem 4rem rgba(5,3,8,.24); }
+.music-world audio { height: 2rem; filter: sepia(.1) saturate(.82); }
+
+.roots-world { background: radial-gradient(circle at 72% 19%, rgba(255,214,161,.27), transparent 19rem), radial-gradient(circle at 9% 96%, rgba(146,183,149,.3), transparent 34rem), linear-gradient(140deg, #32554b 0%, #56715c 48%, #6f7957 100%); }
+.roots-world__sun { position: absolute; right: 14%; top: 10%; width: 18rem; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,241,207,.85), rgba(255,215,159,.18) 40%, transparent 70%); filter: blur(3px); }
+.roots-world__curve { position: absolute; bottom: -23rem; left: -10%; width: 75%; height: 30rem; border: 1px solid rgba(255,240,211,.22); border-radius: 50%; transform: rotate(-13deg); }
+.roots-flower-shell { position: relative; min-height: 22rem; border: 1px solid rgba(255,235,209,.2); border-radius: 50% 50% 45% 45%; background: radial-gradient(circle at 50% 52%, rgba(255,250,245,.25), transparent 52%); box-shadow: inset 0 0 7rem rgba(25,54,43,.3); }
+
+.contact-world { position: relative; background: linear-gradient(125deg, #fcf9ff, #e9def4); }
+.contact-world::before { position: absolute; right: 3%; top: 15%; width: 13rem; height: 13rem; border: 1px solid rgba(101,64,114,.12); border-radius: 48% 52% 44% 56%; content: ""; transform: rotate(23deg); }
+.contact-world .contact-photo-frame { box-shadow: 1rem 1.2rem 0 rgba(180,154,205,.22), 0 1.8rem 3.5rem rgba(74,41,85,.16); transform: rotate(1.3deg); }
+
+.bellumi-footer { background: #271b32; color: #fffafe; }
+.bellumi-footer .footer-gift { border-color: rgba(226,203,238,.16); background: rgba(255,250,254,.06); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+
+@keyframes letter-open { from { opacity: 0; transform: translateY(1rem) rotate(-.35deg); } to { opacity: 1; transform: translateY(0) rotate(-.35deg); } }
+@keyframes flower-float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-.45rem) rotate(3deg); } }
 @keyframes hat-pop { 0% { opacity: 0; transform: translateY(1.1rem) scale(.25) rotate(-10deg); } 45% { opacity: 1; transform: translateY(-.35rem) scale(1.1) rotate(4deg); } 70% { transform: translateY(0) scale(.96) rotate(-2deg); } 100% { opacity: 0; transform: translateY(-.15rem) scale(1) rotate(0); } }
 @keyframes passiflora-twirl { 0% { transform: scale(.3) rotate(-28deg); } 60% { transform: scale(1.12) rotate(12deg); } 100% { transform: scale(1) rotate(0); } }
+@keyframes petal-bloom-back { from { opacity: 0; transform: translate(-50%,-68%) rotate(calc(var(--i) * 36deg)) translateZ(-90px) scale(.2); } to { opacity: 1; transform: translate(-50%,-94%) rotate(calc(var(--i) * 36deg)) translateZ(-18px) scale(.94); } }
+@keyframes petal-bloom-front { from { opacity: 0; transform: translate(-50%,-67%) rotate(calc(18deg + var(--i) * 36deg)) translateZ(-80px) scale(.15); } to { opacity: 1; transform: translate(-50%,-92%) rotate(calc(18deg + var(--i) * 36deg)) translateZ(20px); } }
+@keyframes filament-arrive { from { opacity: 0; transform: translate(-50%,-58%) rotate(calc(var(--i) * 12.857deg)) translateZ(-25px) scaleY(.15); } to { opacity: 1; transform: translate(-50%,-96%) rotate(calc(var(--i) * 12.857deg)) translateZ(38px); } }
+@keyframes center-arrive { from { opacity: 0; transform: translateZ(-50px) scale(.2); } to { opacity: 1; transform: translateZ(58px) scale(1); } }
+@keyframes compact-float { 0%,100% { transform: translate(-50%,-50%) rotateX(-3deg) rotateY(4deg); } 50% { transform: translate(-50%,-53%) rotateX(3deg) rotateY(-3deg); } }
 
-@media (hover: hover) {
-  main h1:hover, main h2:hover { transform: translateY(-.12em) rotate(-.35deg); text-shadow: .08em .1em 0 rgba(174, 150, 196, .2); }
-  main section img:not([alt="Passiflora logo"]):hover { filter: saturate(1.08) brightness(1.04); transform: scale(1.035); }
+@media (max-width: 768px) {
+  .bellumi-hero { min-height: 44rem; }
+  .hero-flower-wrap { right: -7.5rem; top: 8.8rem; width: 34rem; height: 34rem; opacity: .9; }
+  .hero-copy { position: relative; z-index: 4; }
+  .hero-side-note { right: 1.4rem; bottom: 1.2rem; }
+  .passiflora-trigger { font-size: .62rem; padding: .65rem .8rem; }
+  .world-letter article { box-shadow: .5rem .7rem 0 rgba(196,169,209,.2), 0 1.3rem 2rem rgba(73,46,84,.08); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .scroll-reveal { opacity: 1; transform: none; }
+  .passiflora-trigger { display: none; }
 }
