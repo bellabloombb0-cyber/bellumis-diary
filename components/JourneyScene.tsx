@@ -5,28 +5,21 @@ import { useEffect, useRef, useState } from "react";
 const chapters = [
   {
     number: "01",
+    eyebrow: "Bellumi’s Diary",
+    title: "A little world\nopens here.",
+    note: "Scroll slowly — the flower has something to say.",
+  },
+  {
+    number: "02",
     eyebrow: "Music",
     title: "A flower becomes\na song.",
     note: "The thing I love — carried anywhere.",
   },
-  {
-    number: "02",
-    eyebrow: "My Roots",
-    title: "The song finds\nits way home.",
-    note: "Portugal, wild light, and the place that still lives in me.",
-  },
-  {
-    number: "03",
-    eyebrow: "A Letter for You",
-    title: "And then,\na little truth.",
-    note: "Something soft to take with you.",
-  },
 ];
 
 /**
- * The visual story between the opening bloom and the detailed chapters below.
- * It uses one real flower photo and composited CSS layers so it feels spatial
- * without loading a heavy 3D canvas on a phone.
+ * The first part of the visual story: a real Passiflora turns into music.
+ * It stays deliberately small and light while the later chapters remain below.
  */
 export function JourneyScene() {
   const sceneRef = useRef<HTMLElement>(null);
@@ -40,7 +33,7 @@ export function JourneyScene() {
       const bounds = scene.getBoundingClientRect();
       const available = Math.max(1, scene.offsetHeight - window.innerHeight);
       const progress = Math.min(1, Math.max(0, -bounds.top / available));
-      const chapter = Math.min(2, Math.floor(progress * 3.03));
+      const chapter = Math.min(1, Math.floor(progress * 2.03));
 
       scene.style.setProperty("--journey-progress", progress.toFixed(3));
       setActiveChapter((current) => (current === chapter ? current : chapter));
@@ -56,7 +49,7 @@ export function JourneyScene() {
   }, []);
 
   return (
-    <section ref={sceneRef} className="journey-scene" aria-label="The Bellumi’s Diary journey">
+    <section id="top" ref={sceneRef} className="journey-scene" aria-label="The Bellumi’s Diary journey">
       <div className={`journey-scene__sticky journey-scene--chapter-${activeChapter + 1}`}>
         <div className="journey-scene__depth journey-scene__depth--back" aria-hidden="true" />
         <div className="journey-scene__depth journey-scene__depth--middle" aria-hidden="true" />
@@ -68,6 +61,10 @@ export function JourneyScene() {
           <div className="journey-flower__photo">
             <img src="/images/passiflora-hero.jpeg" alt="" />
           </div>
+          <div className="journey-flower__guitar">
+            <img src="/images/music/bella-with-guitar.png?v=2" alt="" />
+          </div>
+          <p className="journey-flower__wordmark">Bellumi’s<br /><em>Diary</em></p>
           <div className="journey-flower__glass" />
         </div>
 
@@ -89,7 +86,7 @@ export function JourneyScene() {
           </div>
         ))}
 
-        <p className="journey-scene__prompt">Keep scrolling — the flower carries the story.</p>
+        <p className="journey-scene__prompt">Keep scrolling — the flower becomes music.</p>
       </div>
     </section>
   );
