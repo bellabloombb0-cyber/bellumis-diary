@@ -26,15 +26,15 @@ export function Music() {
     redirectTimer.current = window.setTimeout(() => window.location.assign(paymentLink), 1100);
   };
 
-  return <section id="music" className="bg-[#e9dff2] px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
+  return <section id="music" className="music-world px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
     <div className="mx-auto max-w-7xl">
       <ScrollReveal>
-        <p className="section-kicker text-lilac-deep">04 — Music</p>
-        <h2 className="mt-9 font-[family-name:var(--font-display)] text-5xl leading-[.95] sm:text-7xl">The thing<br /><em className="font-normal text-lilac-deep">I love.</em></h2>
+        <p className="section-kicker text-[#e6d5ef]">02 — Music</p>
+        <h2 className="mt-9 font-[family-name:var(--font-display)] text-5xl leading-[.88] text-mist sm:text-7xl">The thing<br /><em className="font-normal text-[#ddc5e9]">I love.</em></h2>
       </ScrollReveal>
 
       <div className="mt-14 grid items-start gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-16">
-        <ScrollReveal className="relative overflow-hidden rounded-[2rem] border-8 border-mist bg-lilac/20 shadow-xl shadow-lilac/20">
+        <ScrollReveal className="music-photo relative overflow-hidden rounded-[2rem] border-8 border-mist bg-lilac/20">
           <img src="/images/music/bella-with-guitar.png?v=2" alt="Bella playing her hand-painted sunflower guitar outdoors" className="aspect-[4/5] w-full object-cover lg:aspect-[3/4]" />
           <p className="border-t border-lilac/15 bg-mist px-5 py-4 text-xs leading-5 text-ink/65">
             Photo &amp; hand-painted guitar artwork by {" "}
@@ -42,7 +42,7 @@ export function Music() {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className="rounded-[2rem] bg-mist p-6 shadow-sm sm:p-8">
+        <ScrollReveal className="music-card rounded-[2rem] p-6 sm:p-8">
           <p className="font-[family-name:var(--font-display)] text-3xl leading-tight text-ink">My digital street music hat</p>
           <p className="mt-5 max-w-xl text-base leading-8 text-ink/70">Music is my portable home. You&apos;re always welcome to simply listen.</p>
 
