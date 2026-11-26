@@ -180,3 +180,57 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .hero-next-chapter strong { font-size: 1.12rem; }
   .chapter-index__card:nth-child(n) { transform: none; }
 }
+
+
+/* The continuous 3D story: one real Passiflora carries Music into Portugal, then into the letter. */
+.journey-scene { position: relative; height: 330vh; background: #382142; }
+.journey-scene__sticky { position: sticky; top: 0; height: 100svh; min-height: 39rem; isolation: isolate; overflow: hidden; background: #382142; perspective: 1800px; transition: background 900ms ease; }
+.journey-scene__sticky::before, .journey-scene__sticky::after { position: absolute; inset: 0; content: ""; pointer-events: none; transition: opacity 900ms ease, transform 1200ms cubic-bezier(.22,1,.36,1); }
+.journey-scene__sticky::before { z-index: -2; background: radial-gradient(circle at 50% 55%, rgba(203,158,228,.28), transparent 19rem), linear-gradient(135deg, #1f1629, #42274e 64%, #735f7b); }
+.journey-scene__sticky::after { z-index: -1; opacity: 0; background: radial-gradient(circle at 52% 43%, rgba(255,228,171,.82), rgba(255,223,154,.12) 22%, transparent 47%), linear-gradient(135deg, #31584d 0%, #617058 51%, #d4a982 100%); }
+.journey-scene--chapter-2 { background: #5f755d; }
+.journey-scene--chapter-2::before { opacity: 0; transform: scale(1.1); }
+.journey-scene--chapter-2::after { opacity: 1; }
+.journey-scene--chapter-3 { background: #eadcf2; }
+.journey-scene--chapter-3::before { opacity: 0; }
+.journey-scene--chapter-3::after { opacity: 1; filter: saturate(.55) brightness(1.1); transform: scale(1.1); }
+.journey-scene__depth { position: absolute; left: 50%; top: 50%; pointer-events: none; transform-style: preserve-3d; transition: border-color 900ms ease, opacity 900ms ease, transform 1200ms cubic-bezier(.22,1,.36,1); }
+.journey-scene__depth--back { width: min(102vw, 92rem); height: min(65vw, 58rem); border: 1px solid rgba(239,218,249,.17); border-radius: 50%; opacity: .8; transform: translate(-50%,-50%) rotateX(68deg) rotateZ(-12deg) translateZ(-280px); }
+.journey-scene__depth--middle { width: min(78vw, 68rem); height: min(54vw, 46rem); border: 1px solid rgba(239,218,249,.18); border-radius: 50%; transform: translate(-50%,-50%) rotateX(69deg) rotateZ(18deg) translateZ(-120px); }
+.journey-scene--chapter-2 .journey-scene__depth--back { border-color: rgba(255,239,201,.37); opacity: 1; transform: translate(-50%,-45%) rotateX(68deg) rotateZ(17deg) translateZ(-280px) scale(1.1); }
+.journey-scene--chapter-2 .journey-scene__depth--middle { border-color: rgba(255,239,201,.3); transform: translate(-50%,-48%) rotateX(69deg) rotateZ(-28deg) translateZ(-120px) scale(1.16); }
+.journey-scene--chapter-3 .journey-scene__depth { border-color: rgba(101,64,114,.13); opacity: .7; }
+.journey-scene__thread { position: absolute; left: 50%; top: 50%; width: min(128vw, 112rem); height: 1px; border-top: 1px solid rgba(239,218,249,.27); transform: translate(-50%,-50%) rotateZ(-18deg) translateZ(-20px); transition: transform 1.3s cubic-bezier(.22,1,.36,1), opacity 900ms ease, border-color 900ms ease; }
+.journey-scene--chapter-2 .journey-scene__thread { border-color: rgba(255,239,201,.53); transform: translate(-50%,-50%) rotateZ(10deg) translateZ(-20px) scaleX(1.15); }
+.journey-scene--chapter-3 .journey-scene__thread { border-color: rgba(101,64,114,.2); opacity: .75; }
+.journey-flower { position: absolute; left: 50%; top: 52%; width: min(55vw, 43rem); aspect-ratio: 1; transform: translate(-50%,-50%); transform-style: preserve-3d; transition: width 1s cubic-bezier(.22,1,.36,1), transform 1.2s cubic-bezier(.22,1,.36,1), filter 900ms ease; }
+.journey-flower__photo, .journey-flower__halo, .journey-flower__glass, .journey-flower__shadow { position: absolute; left: 50%; top: 50%; }
+.journey-flower__photo { width: 88%; aspect-ratio: 1; overflow: hidden; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; box-shadow: 0 2.5rem 5rem rgba(14,8,20,.43), inset 0 0 0 1rem rgba(255,255,255,.06); transform: translate(-50%,-50%) rotateX(-5deg) rotateY(6deg) translateZ(90px); transition: border-radius 1.25s cubic-bezier(.22,1,.36,1), transform 1.25s cubic-bezier(.22,1,.36,1), box-shadow 1.25s ease; }
+.journey-flower__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; transform: scale(1.12); }
+.journey-flower__halo { width: 100%; aspect-ratio: 1; border: 1px solid rgba(237,219,247,.32); border-radius: 50%; box-shadow: 0 0 8rem rgba(183,133,211,.27); transform: translate(-50%,-50%) translateZ(-70px) scale(1.1); transition: background 1s ease, box-shadow 1s ease, transform 1.2s cubic-bezier(.22,1,.36,1); }
+.journey-flower__glass { width: 90%; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(135deg, rgba(255,255,255,.45), transparent 28%, transparent 72%, rgba(215,181,234,.25)); opacity: .45; transform: translate(-50%,-50%) translateZ(120px); }
+.journey-flower__shadow { width: 80%; height: 17%; border-radius: 50%; background: rgba(8,4,13,.45); filter: blur(24px); transform: translate(-50%,70%) rotateX(70deg) translateZ(-170px); transition: background 1s ease, transform 1.2s cubic-bezier(.22,1,.36,1); }
+.journey-scene--chapter-2 .journey-flower { width: min(37vw, 30rem); filter: saturate(.87) sepia(.09); transform: translate(-50%,-55%) rotateZ(13deg); }
+.journey-scene--chapter-2 .journey-flower__photo { border-radius: 50% 50% 42% 42%; box-shadow: 0 2rem 4rem rgba(26,62,45,.34), inset 0 0 0 1rem rgba(255,246,216,.08); transform: translate(-50%,-50%) rotateX(4deg) rotateY(-10deg) translateZ(75px); }
+.journey-scene--chapter-2 .journey-flower__halo { background: rgba(255,226,164,.23); box-shadow: 0 0 9rem rgba(255,207,129,.53); transform: translate(-50%,-50%) translateZ(-70px) scale(1.32); }
+.journey-scene--chapter-2 .journey-flower__shadow { background: rgba(28,69,47,.37); transform: translate(-50%,70%) rotateX(70deg) translateZ(-170px) scale(.82); }
+.journey-scene--chapter-3 .journey-flower { width: min(22vw, 17rem); filter: saturate(.76) contrast(.92); transform: translate(-145%,-93%) rotateZ(-9deg); }
+.journey-scene--chapter-3 .journey-flower__photo { border-radius: 1rem; box-shadow: .55rem .7rem 0 rgba(101,64,114,.18), 0 1.3rem 2.6rem rgba(73,46,84,.16); transform: translate(-50%,-50%) rotateX(0) rotateY(0) translateZ(40px); }
+.journey-scene--chapter-3 .journey-flower__halo { opacity: .26; transform: translate(-50%,-50%) translateZ(-70px) scale(.8); }
+.journey-scene--chapter-3 .journey-flower__glass { opacity: .18; }
+.journey-scene--chapter-3 .journey-flower__shadow { opacity: .25; transform: translate(-65%,105%) rotateX(70deg) translateZ(-170px) scale(.65); }
+.journey-chapter { position: absolute; left: clamp(1.5rem, 8vw, 9rem); top: 50%; z-index: 4; max-width: min(37rem, 48vw); color: #fffafe; opacity: 0; transform: translate3d(0,2rem,0) rotateX(8deg); transform-origin: left bottom; transition: opacity 700ms ease, transform 900ms cubic-bezier(.22,1,.36,1); }
+.journey-chapter h2 { margin: 1.25rem 0 1.45rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.2rem, 6.8vw, 7.3rem); font-weight: 400; line-height: .84; letter-spacing: -.055em; }
+.journey-chapter h2 > span > span { display: inline-block; text-shadow: 0 .25rem 1.5rem rgba(6,4,9,.22); }
+.journey-chapter p:last-child { max-width: 22rem; font-size: 1rem; line-height: 1.7; opacity: .8; }
+.journey-scene--chapter-1 .journey-chapter--1, .journey-scene--chapter-2 .journey-chapter--2, .journey-scene--chapter-3 .journey-chapter--3 { opacity: 1; transform: translate3d(0,-50%,55px) rotateX(0); }
+.journey-scene--chapter-2 .journey-chapter { color: #fff9ec; }
+.journey-scene--chapter-3 .journey-chapter { color: #392245; }
+.journey-scene__counter { position: absolute; right: clamp(1.5rem, 7vw, 8rem); top: clamp(7rem, 13vh, 10rem); z-index: 5; display: flex; align-items: center; gap: .75rem; color: rgba(255,250,254,.72); font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; transition: color 900ms ease; }
+.journey-scene__counter i { width: 2.5rem; height: 1px; background: currentColor; opacity: .65; }
+.journey-scene--chapter-2 .journey-scene__counter { color: rgba(255,249,236,.82); }
+.journey-scene--chapter-3 .journey-scene__counter { color: rgba(57,34,69,.68); }
+.journey-scene__prompt { position: absolute; right: clamp(1.5rem, 7vw, 8rem); bottom: 2rem; z-index: 5; max-width: 12rem; color: rgba(255,250,254,.54); font-size: .68rem; letter-spacing: .12em; line-height: 1.5; text-align: right; text-transform: uppercase; transition: color 900ms ease; }
+.journey-scene--chapter-2 .journey-scene__prompt { color: rgba(255,249,236,.68); }
+.journey-scene--chapter-3 .journey-scene__prompt { color: rgba(57,34,69,.58); }
+@media (max-width: 768px) { .journey-scene { height: 290vh; } .journey-scene__sticky { min-height: 42rem; } .journey-scene__depth--back { width: 125vw; height: 40rem; } .journey-scene__depth--middle { width: 110vw; height: 34rem; } .journey-flower { width: 31rem; top: 48%; } .journey-scene--chapter-2 .journey-flower { width: 22rem; transform: translate(-50%,-60%) rotateZ(13deg); } .journey-scene--chapter-3 .journey-flower { width: 8rem; transform: translate(-137%,-183%) rotateZ(-9deg); } .journey-chapter { left: 1.5rem; top: 61%; max-width: calc(100% - 3rem); } .journey-chapter h2 { font-size: clamp(3.3rem, 14vw, 5.1rem); } .journey-chapter p:last-child { max-width: 16rem; font-size: .92rem; } .journey-scene__counter { top: 6.7rem; right: 1.5rem; } .journey-scene__prompt { right: 1.5rem; bottom: 1.4rem; } }
