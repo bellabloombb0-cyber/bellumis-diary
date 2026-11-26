@@ -1,13 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type PassifloraSceneProps = {
   compact?: boolean;
   openOnScroll?: boolean;
 };
-
-const filaments = Array.from({ length: 28 }, (_, index) => index);
 
 export function PassifloraScene({ compact = false, openOnScroll = false }: PassifloraSceneProps) {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -66,7 +64,7 @@ export function PassifloraScene({ compact = false, openOnScroll = false }: Passi
     <div
       ref={sceneRef}
       className={`passiflora-scene ${compact ? "passiflora-scene--compact" : ""} ${isBlooming ? "is-blooming" : ""}`}
-      aria-label="A layered passion flower that opens slowly"
+      aria-label="A real passion flower that opens as the story begins"
     >
       {!compact && !openOnScroll && (
         <button type="button" onClick={bloom} className="passiflora-trigger" aria-pressed={isBlooming}>
@@ -78,24 +76,11 @@ export function PassifloraScene({ compact = false, openOnScroll = false }: Passi
       <div className="passiflora-orbit passiflora-orbit--one" />
       <div className="passiflora-orbit passiflora-orbit--two" />
       <div className="passiflora-shadow" />
-
-      <div className="passiflora-flower" aria-hidden="true">
-        <div className="passiflora-petals passiflora-petals--back">
-          {Array.from({ length: 10 }, (_, index) => <span key={index} style={{ "--i": index } as CSSProperties} />)}
-        </div>
-        <div className="passiflora-petals passiflora-petals--front">
-          {Array.from({ length: 10 }, (_, index) => <span key={index} style={{ "--i": index } as CSSProperties} />)}
-        </div>
-        <div className="passiflora-filaments">
-          {filaments.map((index) => <i key={index} style={{ "--i": index } as CSSProperties} />)}
-        </div>
-        <div className="passiflora-center">
-          <span className="passiflora-stamen passiflora-stamen--left" />
-          <span className="passiflora-stamen passiflora-stamen--middle" />
-          <span className="passiflora-stamen passiflora-stamen--right" />
-          <span className="passiflora-core" />
-        </div>
+      <div className="passiflora-photo passiflora-photo--echo" aria-hidden="true" />
+      <div className="passiflora-photo passiflora-photo--main">
+        <img src="/images/passiflora-hero.jpeg" alt="A real purple passion flower" />
       </div>
+      <div className="passiflora-lens" aria-hidden="true" />
     </div>
   );
 }
