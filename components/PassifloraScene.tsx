@@ -4,11 +4,12 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 type PassifloraSceneProps = {
   compact?: boolean;
+  openOnScroll?: boolean;
 };
 
 const filaments = Array.from({ length: 28 }, (_, index) => index);
 
-export function PassifloraScene({ compact = false }: PassifloraSceneProps) {
+export function PassifloraScene({ compact = false, openOnScroll = false }: PassifloraSceneProps) {
   const sceneRef = useRef<HTMLDivElement>(null);
   const [isBlooming, setIsBlooming] = useState(false);
 
@@ -37,6 +38,25 @@ export function PassifloraScene({ compact = false }: PassifloraSceneProps) {
     };
   }, [compact]);
 
+  useEffect(() => {
+    if (compact || !openOnScroll) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      setIsBlooming(true);
+      return;
+    }
+
+    const bloomOnScroll = () => {
+      // A small first scroll is all it takes: the scene should feel discovered, not controlled.
+      if (window.scrollY > Math.max(28, window.innerHeight * 0.06)) setIsBlooming(true);
+    };
+
+    bloomOnScroll();
+    window.addEventListener("scroll", bloomOnScroll, { passive: true });
+    return () => window.removeEventListener("scroll", bloomOnScroll);
+  }, [compact, openOnScroll]);
+
   const bloom = () => {
     setIsBlooming(false);
     window.requestAnimationFrame(() => setIsBlooming(true));
@@ -48,7 +68,7 @@ export function PassifloraScene({ compact = false }: PassifloraSceneProps) {
       className={`passiflora-scene ${compact ? "passiflora-scene--compact" : ""} ${isBlooming ? "is-blooming" : ""}`}
       aria-label="A layered passion flower that opens slowly"
     >
-      {!compact && (
+      {!compact && !openOnScroll && (
         <button type="button" onClick={bloom} className="passiflora-trigger" aria-pressed={isBlooming}>
           <span>Let it bloom</span>
           <span aria-hidden="true">✦</span>
