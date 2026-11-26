@@ -1,7 +1,6 @@
 import { ChapterIndex } from "@/components/ChapterIndex";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
 import { JourneyScene } from "@/components/JourneyScene";
 import { Music } from "@/components/Music";
 import { Navbar } from "@/components/Navbar";
@@ -12,7 +11,6 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <Hero />
       <JourneyScene />
       <Music />
       <Portugal />
