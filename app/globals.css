@@ -315,3 +315,32 @@ a, button { -webkit-tap-highlight-color: transparent; }
 @keyframes butterfly-takes-flight { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.12) rotate(-20deg); } 18% { opacity: 1; transform: translate(-48%,-54%) scale(.48) rotate(10deg); } 54% { opacity: .96; transform: translate(5vw,-15vh) scale(.98) rotate(-11deg); } 82% { opacity: .55; transform: translate(20vw,-27vh) scale(.72) rotate(8deg); } 100% { opacity: 0; transform: translate(28vw,-32vh) scale(.38) rotate(16deg); } }
 @media (max-width: 768px) { .journey-scene { height: 285vh; } .journey-film__clip--flower { object-position: 50% 53%; } .journey-film__clip--butterfly { object-position: 53% 50%; } .journey-intro-wordmark { font-size: clamp(3rem, 15vw, 5rem); } .journey-scene--stage-3 .journey-flower { width: 25rem; transform: translate(-50%,-57%) rotateZ(7deg); } .journey-butterfly-flight { width: 6rem; } }
 @media (prefers-reduced-motion: reduce) { .journey-film { background: #17111f url("/videos/passiflora-zoom-poster.jpg") center / cover no-repeat; } .journey-film__clip, .journey-butterfly-flight { display: none; } .journey-scene--stage-2 .journey-film { background-image: url("/videos/butterfly-landing-poster.jpg"); } }
+
+                   
+
+/* Quiet opening — Bella's real Passiflora is a still image, not a moving clip. */
+.journey-scene { height: 220vh; background: #21162b; }
+.journey-scene__sticky { background: radial-gradient(circle at 50% 55%, rgba(202,164,222,.18), transparent 25rem), linear-gradient(135deg, #17111f, #382044 54%, #1c1225); }
+.journey-scene__sticky::before { opacity: 0; }
+.journey-film, .journey-butterfly-flight { display: none; }
+.journey-scene__depth { z-index: 1; opacity: .72; }
+.journey-flower { z-index: 3; opacity: 1; width: min(68vw, 46rem); filter: none; transform: translate(-50%,-50%); }
+.journey-flower__photo { opacity: 1; border-radius: 50%; box-shadow: 0 2rem 4.5rem rgba(8,4,12,.5), inset 0 0 0 1rem rgba(255,255,255,.06); transform: translate(-50%,-50%) translateZ(45px); }
+.journey-flower__photo img { object-position: 50% 55%; transform: scale(1.12); }
+.journey-flower__halo { background: rgba(203,164,222,.12); box-shadow: 0 0 7rem rgba(177,130,207,.3); }
+.journey-flower__guitar { clip-path: circle(0 at 50% 50%); opacity: 0; transform: translate(-50%,-50%) translateZ(80px) scale(.9); }
+.journey-intro-wordmark { z-index: 5; opacity: 1; transform: translate(-50%,-50%) translateZ(110px); }
+.journey-scene--quiet-2 .journey-intro-wordmark { opacity: 0; transform: translate(-50%,-70%) translateZ(110px) scale(.92); }
+.journey-scene--quiet-2 .journey-flower { width: min(48vw, 37rem); transform: translate(-50%,-52%); }
+.journey-scene--quiet-2 .journey-flower__photo { opacity: .55; }
+.journey-scene--quiet-2 .journey-flower__guitar { clip-path: circle(50% at 50% 50%); opacity: .82; transform: translate(-50%,-50%) translateZ(80px) scale(1); }
+.journey-scene--quiet-2 .journey-chapter--quiet-music { color: #fffafe; opacity: 1; transform: translate3d(0,-50%,55px) rotateX(0); }
+.journey-scene__counter, .journey-scene__prompt, .journey-chapter { z-index: 6; }
+.roots-photo-shell { aspect-ratio: 4 / 5; min-height: 22rem; box-shadow: 1.1rem 1.1rem 0 rgba(243,216,178,.12), 0 2rem 4rem rgba(15,34,27,.3); }
+.roots-photo-shell img { display: block; }
+@media (max-width: 768px) {
+  .journey-scene { height: 205vh; }
+  .journey-flower { width: 31rem; top: 49%; }
+  .journey-intro-wordmark { font-size: clamp(3rem, 15vw, 5rem); }
+  .journey-scene--quiet-2 .journey-flower { width: 23rem; transform: translate(-50%,-56%); }
+}
