@@ -1,8 +1,9 @@
 const chapters = [
   { id: "music", number: "01", title: "Music", copy: "Listen again, stay with a song, or leave a little coin in the hat." },
-  { id: "portugal", number: "02", title: "My Roots", copy: "Step back into Portugal — the place that still feels like a beginning." },
+  { id: "portugal", number: "02", title: "Portugal", copy: "Step back into Portugal — the place that still feels like a beginning." },
   { id: "philosophy", number: "03", title: "A Letter for You", copy: "Read the letter slowly, whenever it feels like the right time." },
 ];
+
 
 export function ChapterIndex() {
   return <section className="chapter-index px-5 py-24 sm:px-10 lg:px-16 lg:py-36">
@@ -21,3 +22,4 @@ export function ChapterIndex() {
     </div>
   </section>;
 }
+
