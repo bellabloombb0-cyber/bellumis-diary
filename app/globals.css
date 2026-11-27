@@ -274,3 +274,44 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .journey-flower__guitar { mix-blend-mode: normal; }
 .journey-flower__guitar img { object-position: 50% 100%; transform: scale(1.16); }
 .journey-scene--chapter-2 .journey-flower__guitar { opacity: .62; }
+
+
+
+/* Original footage sequence: Passiflora zoom → butterfly landing → Music. */
+.journey-scene { height: 330vh; background: #15101c; }
+.journey-scene__sticky { background: #17111f; }
+.journey-scene__sticky::before, .journey-scene__sticky::after { z-index: 0; }
+.journey-film { position: absolute; inset: 0; z-index: 1; overflow: hidden; background: #17111f; }
+.journey-film__clip { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 1200ms cubic-bezier(.22,1,.36,1), transform 1500ms cubic-bezier(.22,1,.36,1), filter 1200ms ease; }
+.journey-film__clip--flower { object-position: 50% 56%; filter: saturate(.9) contrast(.93) brightness(.72); transform: scale(1.02); }
+.journey-film__clip--butterfly { object-position: 50% 50%; opacity: 0; filter: saturate(.77) brightness(.48) contrast(.95); transform: scale(1.1); }
+.journey-film__veil { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, transparent 0 18%, rgba(18,10,26,.22) 55%, rgba(13,8,18,.76) 100%), linear-gradient(115deg, rgba(38,20,51,.2), transparent 48%, rgba(18,11,26,.38)); transition: background 1100ms ease; }
+.journey-scene--stage-2 .journey-film__clip--flower { opacity: 0; transform: scale(1.22); filter: blur(5px) brightness(.54); }
+.journey-scene--stage-2 .journey-film__clip--butterfly { opacity: 1; filter: saturate(.8) brightness(.61) contrast(.96); transform: scale(1); }
+.journey-scene--stage-2 .journey-film__veil { background: radial-gradient(circle at 50% 54%, transparent 0 20%, rgba(20,34,19,.13) 53%, rgba(11,20,13,.72) 100%); }
+.journey-scene--stage-3 .journey-film__clip--flower { opacity: 0; }
+.journey-scene--stage-3 .journey-film__clip--butterfly { opacity: .16; filter: saturate(.45) brightness(.34) blur(2px); transform: scale(1.08); }
+.journey-scene--stage-3 .journey-film__veil { background: radial-gradient(circle at 50% 54%, rgba(70,38,88,.3), rgba(25,15,35,.84) 78%); }
+.journey-scene__depth { z-index: 2; }
+.journey-scene__thread { z-index: 3; }
+.journey-flower { z-index: 4; opacity: 0; width: min(58vw, 43rem); pointer-events: none; transition: opacity 700ms ease, width 1200ms cubic-bezier(.22,1,.36,1), transform 1200ms cubic-bezier(.22,1,.36,1), filter 900ms ease; }
+.journey-flower__photo { transition: opacity 900ms ease, transform 1200ms cubic-bezier(.22,1,.36,1), border-radius 1200ms cubic-bezier(.22,1,.36,1), box-shadow 900ms ease; }
+.journey-flower__guitar { mix-blend-mode: normal; }
+.journey-flower__guitar img { object-position: 50% 100%; transform: scale(1.16); }
+.journey-scene--stage-3 .journey-flower { opacity: 1; width: min(48vw, 38rem); filter: saturate(1.06); transform: translate(-50%,-52%) rotateZ(7deg); }
+.journey-scene--stage-3 .journey-flower__photo { opacity: .58; border-radius: 50%; box-shadow: 0 2rem 4rem rgba(7,4,10,.52); transform: translate(-50%,-50%) rotateX(2deg) rotateY(-7deg) translateZ(70px); }
+.journey-scene--stage-3 .journey-flower__halo { background: rgba(216,167,232,.16); box-shadow: 0 0 9rem rgba(183,133,211,.38); transform: translate(-50%,-50%) translateZ(-70px) scale(1.25); }
+.journey-scene--stage-3 .journey-flower__guitar { clip-path: circle(50% at 50% 50%); opacity: .82; transform: translate(-50%,-50%) rotateZ(-4deg) translateZ(98px) scale(1); }
+.journey-intro-wordmark { position: absolute; left: 50%; top: 50%; z-index: 6; margin: 0; width: min(83vw, 45rem); color: #fffafe; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.2rem, 8.4vw, 8rem); font-weight: 400; line-height: .77; text-align: center; text-shadow: 0 .4rem 2rem rgba(17,8,25,.78); transform: translate(-50%,-50%) translateZ(120px); transition: opacity 700ms ease, transform 1000ms cubic-bezier(.22,1,.36,1); }
+.journey-intro-wordmark em { color: #edd9f8; font-weight: 400; }
+.journey-scene--stage-2 .journey-intro-wordmark, .journey-scene--stage-3 .journey-intro-wordmark { opacity: 0; transform: translate(-50%,-78%) translateZ(170px) scale(.88); }
+.journey-butterfly-flight { position: absolute; left: 50%; top: 50%; z-index: 7; width: clamp(4.8rem, 10vw, 8.5rem); overflow: visible; fill: rgba(255,250,235,.93); filter: drop-shadow(0 .7rem 1rem rgba(8,16,9,.42)); opacity: 0; pointer-events: none; transform: translate(-50%,-50%) scale(.16); }
+.journey-butterfly-flight__body { fill: none; stroke: #645c30; stroke-linecap: round; stroke-width: 5; }
+.journey-scene--stage-2 .journey-butterfly-flight { animation: butterfly-takes-flight 2300ms cubic-bezier(.22,1,.36,1) both; }
+.journey-scene__counter, .journey-scene__prompt, .journey-chapter { z-index: 8; }
+.journey-scene__counter { color: rgba(255,250,254,.77); }
+.journey-scene__prompt { color: rgba(255,250,254,.67); }
+.journey-scene--stage-3 .journey-chapter--music { color: #fffafe; opacity: 1; transform: translate3d(0,-50%,55px) rotateX(0); }
+@keyframes butterfly-takes-flight { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.12) rotate(-20deg); } 18% { opacity: 1; transform: translate(-48%,-54%) scale(.48) rotate(10deg); } 54% { opacity: .96; transform: translate(5vw,-15vh) scale(.98) rotate(-11deg); } 82% { opacity: .55; transform: translate(20vw,-27vh) scale(.72) rotate(8deg); } 100% { opacity: 0; transform: translate(28vw,-32vh) scale(.38) rotate(16deg); } }
+@media (max-width: 768px) { .journey-scene { height: 285vh; } .journey-film__clip--flower { object-position: 50% 53%; } .journey-film__clip--butterfly { object-position: 53% 50%; } .journey-intro-wordmark { font-size: clamp(3rem, 15vw, 5rem); } .journey-scene--stage-3 .journey-flower { width: 25rem; transform: translate(-50%,-57%) rotateZ(7deg); } .journey-butterfly-flight { width: 6rem; } }
+@media (prefers-reduced-motion: reduce) { .journey-film { background: #17111f url("/videos/passiflora-zoom-poster.jpg") center / cover no-repeat; } .journey-film__clip, .journey-butterfly-flight { display: none; } .journey-scene--stage-2 .journey-film { background-image: url("/videos/butterfly-landing-poster.jpg"); } }
